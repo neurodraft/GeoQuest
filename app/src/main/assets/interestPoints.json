@@ -1,0 +1,179 @@
+[
+  {
+    "name": "Pelourinho de Setúbal",
+    "geoCoordinates": {
+      "latitude": 38.523739,
+      "longitude": -8.896749
+    },
+    "imageFile": "450px-Pelourinho_Setubal01.jpg"
+  },
+  {
+    "name": "Castelo de São Filipe",
+    "geoCoordinates": {
+      "latitude": 38.517715,
+      "longitude": -8.909221
+    },
+    "imageFile": "640px-Fortaleza_de_S.Filipe.jpg"
+  },
+  {
+    "name": "Palacete da Família Feu Guião",
+    "geoCoordinates": {
+      "latitude": 38.52434441,
+      "longitude": -8.89954802
+    },
+    "imageFile": "800px-Feu_Guiao2646.jpg"
+  },
+  {
+    "name": "Quinta do Esteval",
+    "geoCoordinates": {
+      "latitude": 38.5214558,
+      "longitude": -8.94837671
+    },
+    "imageFile": "799px-Quinta_do_Esteval_II.jpg"
+  },
+  {
+    "name": "Casa das Quatro Cabeças",
+    "geoCoordinates": {
+      "latitude": 38.52438078,
+      "longitude": -8.89536291
+    },
+    "imageFile": "640px-Casa_quatro_cabecas_01.jpg"
+  },
+  {
+    "name": "Chafariz da Praça Teófilo Braga",
+    "geoCoordinates": {
+      "latitude": 38.523893,
+      "longitude": -8.896782
+    },
+    "imageFile": "800px-Chafariz_Sapal01.jpg"
+  },
+  {
+    "name": "Forte de Santiago do Outão",
+    "geoCoordinates": {
+      "latitude": 38.488853,
+      "longitude": -8.93414
+    },
+    "imageFile": "800px-Forte_Outão_01.jpg"
+  },
+  {
+    "name": "Portal da Gafaria",
+    "geoCoordinates": {
+      "latitude": 38.5259394,
+      "longitude": -8.88699672
+    },
+    "imageFile": "Portal_da_Gafaria_em_Setúbal.jpg"
+  },
+  {
+    "name": "Igreja de Santa Maria da Graça",
+    "geoCoordinates": {
+      "latitude": 38.524411,
+      "longitude": -8.888055
+    },
+    "imageFile": "Santa_Maria_da_Graca_Church.jpg"
+  },
+  {
+    "name": "Cruzeiro de Setúbal",
+    "geoCoordinates": {
+      "latitude": 38.524517,
+      "longitude": -8.893101
+    },
+    "imageFile": "400px-Jesus_Convent_5.jpg"
+  },
+  {
+    "name": "Convento de Jesus de Setúbal",
+    "geoCoordinates": {
+      "latitude": 38.526147,
+      "longitude": -8.894908
+    },
+    "imageFile": "Jesus_Convent_1.jpg"
+  },
+  {
+    "name": "Igreja de São Julião de Setúbal",
+    "geoCoordinates": {
+      "latitude": 38.5239,
+      "longitude": -8.892417
+    },
+    "imageFile": "Church_in_Praca_do_Bocage.jpg"
+  },
+  {
+    "name": "Aqueduto de Setúbal",
+    "geoCoordinates": {
+      "latitude": 38.530435,
+      "longitude": -8.89624
+    },
+    "imageFile": "800px-Setubal_aqueduto_02.jpg"
+  },
+  {
+    "name": "Fábrica romana de Salga",
+    "geoCoordinates": {
+      "latitude": 38.523534,
+      "longitude": -8.890289
+    },
+    "imageFile": "450px-Fábrica_romana_de_Salga_05.jpg"
+  },
+  {
+    "name": "Fontanário em Vila Nogueira de Azeitão",
+    "geoCoordinates": {
+      "latitude": 38.51723055,
+      "longitude": -9.03317686
+    },
+    "imageFile": "450px-Fontanário_em_Vila_Nigueira_de_Azeitão.jpg"
+  },
+  {
+    "name": "Palácio da Quinta das Torres",
+    "geoCoordinates": {
+      "latitude": 38.520108,
+      "longitude": -9.006192
+    },
+    "imageFile": "quinta das torres.jpg"
+  },
+
+  {
+    "name": "Palácio dos Duques de Aveiro",
+    "geoCoordinates": {
+      "latitude": 38.518488,
+      "longitude": -9.012825
+    },
+    "imageFile": "800px-Palácio_dos_Duques_de_Aveiro,_Vila_Nogueira_de_Azeitão_09.jpg"
+  },
+  {
+    "name": "Pelourinho de Vila Nogueira de Azeitão",
+    "geoCoordinates": {
+      "latitude": 38.518672,
+      "longitude": -9.013756
+    },
+    "imageFile": "407px-Pelourinho_de_Vila_Nogueira_de_Azeitão_-_Portugal_(33922519618).jpg"
+  },
+  {
+    "name": "Convento de Nossa Senhora da Arrábida",
+    "geoCoordinates": {
+      "latitude": 38.473599,
+      "longitude": -8.995253
+    },
+    "imageFile": "800px-Convento_Arrábida.jpg"
+  },
+  {
+    "name": "Igreja de São Lourenço",
+    "geoCoordinates": {
+      "latitude": 38.518934,
+      "longitude": -9.014487
+    },
+    "imageFile": "800px-Igreja_de_São_Lourenço_-_Azeitão_-_Portugal_(32856016997).jpg"
+  },
+  {
+    "name": "Palácio da Bacalhoa",
+    "geoCoordinates": {
+      "latitude": 38.52386294,
+      "longitude": -8.98968509
+    },
+    "imageFile": "Quinta_da_Bacalhôa_(11199645583).jpg"
+  },
+  {
+    "name": "Convento de Brancanes",
+    "geoCoordinates": {
+      "latitude": 38.53287398,
+      "longitude": -8.90110661
+    },
+    "imageFile": "convento_de_brancanes.jpg"
+  }
+]
