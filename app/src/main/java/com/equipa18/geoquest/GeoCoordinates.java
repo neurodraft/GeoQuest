@@ -1,6 +1,6 @@
 package com.equipa18.geoquest;
 
 public class GeoCoordinates {
-    double latitude;
-    double longitude;
+    public double latitude;
+    public double longitude;
 }
