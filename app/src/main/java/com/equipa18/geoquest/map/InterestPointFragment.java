@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,27 +25,29 @@ import java.io.InputStream;
 
 public class InterestPointFragment extends Fragment {
 
-    private InterestPointViewModel mViewModel;
-
-    public static InterestPointFragment newInstance() {
-        return new InterestPointFragment();
-    }
+    private ImageView headerIcon;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_interest_point, container, false);
+
+        headerIcon = view.findViewById(R.id.header_icon);
+
         Bundle b = getArguments();
 
-        ((TextView)view.findViewById(R.id.interest_point_title)).setText((String)b.get("title"));
-
-        try {
-            InputStream is = getContext().getAssets().open("images/" + b.get("imageFile"));
-            Bitmap bmp = BitmapFactory.decodeStream(is);
-            ((ImageView)view.findViewById(R.id.interest_point_image)).setImageBitmap(bmp);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(b.getBoolean("isConquered")){
+            headerIcon.setColorFilter(Color.GREEN);
+        } else if(b.getBoolean("isUnlocked")){
+            headerIcon.setColorFilter(Color.RED);
         }
+
+        ((TextView)view.findViewById(R.id.interest_point_title)).setText(b.getString("title"));
+
+        getParentFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.card_content, CardStartFragment.class, getArguments())
+                .commit();
 
 
         return view;
@@ -53,8 +57,14 @@ public class InterestPointFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mViewModel = new ViewModelProvider(this).get(InterestPointViewModel.class);
-        // TODO: Use the ViewModel
+
     }
 
+
+    public void conquered() {
+    }
+
+    public void wasConquered() {
+        headerIcon.setColorFilter(Color.GREEN);
+    }
 }

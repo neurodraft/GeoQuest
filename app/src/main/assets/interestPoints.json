@@ -5,7 +5,25 @@
       "latitude": 38.523739,
       "longitude": -8.896749
     },
-    "imageFile": "450px-Pelourinho_Setubal01.jpg"
+    "imageFile": "450px-Pelourinho_Setubal01.jpg",
+    "learnmore": "",
+    "quizz": [
+      {
+        "question": "",
+        "answer": "",
+        "category": ""
+      },
+      {
+        "question": "",
+        "answer": "",
+        "category": ""
+      },
+      {
+        "question": "",
+        "answer": "",
+        "category": ""
+      }
+    ]
   },
   {
     "name": "Castelo de São Filipe",
