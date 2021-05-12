@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.equipa18.geoquest.ui.home.HomeFragment"
+        android:name="com.equipa18.geoquest.map.MapsFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
