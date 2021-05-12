@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,8 @@ import android.view.ViewGroup;
 
 import com.equipa18.geoquest.InterestPoint;
 import com.equipa18.geoquest.R;
+import com.equipa18.geoquest.player.Player;
+import com.equipa18.geoquest.player.PlayerManager;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -27,6 +30,8 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,6 +58,10 @@ public class MapsFragment extends Fragment {
     private List<InterestPoint> interestPoints;
     private Map<Marker, InterestPoint> markerInterestPointMap;
 
+    private Map<InterestPoint, List<GameEdge>> edgeMap;
+
+    private InterestPoint currentPoint;
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -73,6 +82,8 @@ public class MapsFragment extends Fragment {
             prepareMapContent();
 
             setActions();
+
+            setUpPlayer();
         }
     };
 
@@ -133,6 +144,7 @@ public class MapsFragment extends Fragment {
 
     private void prepareMapContent(){
         markerInterestPointMap = new HashMap<>();
+        edgeMap = new HashMap<>();
 
         // Get the absolute sum of latitude and longitude of all points to calculate avrg
         double latSum = 0;
@@ -186,6 +198,7 @@ public class MapsFragment extends Fragment {
             }
 
             markerInterestPointMap.put(mMap.addMarker(markerOptions), interestPoint);
+            edgeMap.put(interestPoint, new ArrayList<>());
 
             latSum += interestPoint.geoCoordinates.latitude;
             lngSum += interestPoint.geoCoordinates.longitude;
@@ -214,26 +227,80 @@ public class MapsFragment extends Fragment {
     // Only rendering of triangles (should be lines), no logic yet (should be a graph)
     private void delaunayTriangulation(){
         try {
-            Vector<Vector2D> pointSet = new Vector<>();
+            HashMap<Vector2D, InterestPoint> pointMap = new HashMap<>();
+            Vector<Vector2D> pointVector = new Vector<>();
+
             for(InterestPoint interestPoint : interestPoints){
-                pointSet.add(new Vector2D(interestPoint.geoCoordinates.longitude,
-                        interestPoint.geoCoordinates.latitude));
+                Vector2D point = new Vector2D(interestPoint.geoCoordinates.longitude,
+                        interestPoint.geoCoordinates.latitude);
+
+                pointMap.put(point, interestPoint);
+                pointVector.add(point);
             }
 
-            DelaunayTriangulator delaunayTriangulator = new DelaunayTriangulator(pointSet);
+            DelaunayTriangulator delaunayTriangulator = new DelaunayTriangulator(pointVector);
             delaunayTriangulator.triangulate();
 
             List<Triangle2D> triangleSoup = delaunayTriangulator.getTriangles();
 
             for(Triangle2D triangle : triangleSoup){
-                LatLng p1 = new LatLng(triangle.a.y, triangle.a.x);
-                LatLng p2 = new LatLng(triangle.b.y, triangle.b.x);
-                LatLng p3 = new LatLng(triangle.c.y, triangle.c.x);
 
-                mMap.addPolygon(new PolygonOptions().add(p1, p2, p3).strokeWidth(3));
+                setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.b));
+                setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.c));
+                setUpEdgeBetween(pointMap.get(triangle.b), pointMap.get(triangle.c));
+
+
+
             }
         } catch (NotEnoughPointsException e) {
         }
+    }
+
+
+
+    private void setUpEdgeBetween(InterestPoint a, InterestPoint b){
+        Polyline line = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(a.geoCoordinates.latitude, a.geoCoordinates.longitude),
+                        new LatLng(b.geoCoordinates.latitude, b.geoCoordinates.longitude))
+                .width(3)
+                .color(Color.GRAY));
+
+
+        GameEdge edge = new GameEdge(a, b, line);
+
+        edgeMap.get(a).add(edge);
+        edgeMap.get(b).add(edge);
+    }
+
+
+    private void setUpPlayer(){
+        Player player = PlayerManager.getCurrentPlayer();
+
+        InterestPoint startPoint = interestPoints.get(10);
+        player.unlockPoint(startPoint);
+
+        for(GameEdge edge : edgeMap.get(startPoint)){
+            InterestPoint other;
+            if(edge.a == startPoint){
+                other = edge.b;
+            } else {
+                other = edge.a;
+            }
+            player.unlockPoint(other);
+
+            edge.line.setColor(Color.RED);
+        }
+
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(startPoint.geoCoordinates.latitude,
+                        startPoint.geoCoordinates.longitude))
+                .zoom(14)
+                .bearing(0)
+                .tilt(25)
+                .build();
+
+        // Moves camera to position
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
     private void setActions(){
@@ -245,11 +312,13 @@ public class MapsFragment extends Fragment {
                 //String markerName = marker.getTitle();
                 //Toast.makeText(getContext(), "Clicked location is " + markerName, Toast.LENGTH_SHORT).show();
                 InterestPoint interestPoint = markerInterestPointMap.get(marker);
-
                 Bundle bundle = new Bundle();
 
                 bundle.putString("title", interestPoint.name);
                 bundle.putString("imageFile", interestPoint.imageFile);
+                bundle.putBoolean("isUnlocked", PlayerManager.getCurrentPlayer().hasUnlocked(interestPoint));
+                bundle.putBoolean("isConquered", PlayerManager.getCurrentPlayer().hasConquered(interestPoint));
+
 
 
                 getParentFragmentManager().beginTransaction()
@@ -258,6 +327,8 @@ public class MapsFragment extends Fragment {
                         .commit();
 
                 showingCard = true;
+                currentPoint = interestPoint;
+
 
                 return false;
             }
@@ -273,9 +344,52 @@ public class MapsFragment extends Fragment {
                             .remove(getParentFragmentManager().findFragmentById(R.id.fragment_container_view))
                             .commit();
                     showingCard = false;
+                    currentPoint = null;
 
                 }
             }
         });
+    }
+
+    public void conqueredCurrentPoint() {
+        if(currentPoint != null){
+            System.out.println("Conquered " + currentPoint.name);
+            PlayerManager.getCurrentPlayer().conquerPoint(currentPoint);
+            for(GameEdge edge : edgeMap.get(currentPoint)){
+                InterestPoint other;
+                if(edge.a == currentPoint){
+                    other = edge.b;
+                } else {
+                    other = edge.a;
+                }
+                System.out.println("\nConsidering " + other.name + "...");
+                if(!PlayerManager.getCurrentPlayer().hasConquered(other)){
+                    if(!PlayerManager.getCurrentPlayer().hasUnlocked(other)){
+                        System.out.println("Unlocked " + other.name);
+                        PlayerManager.getCurrentPlayer().unlockPoint(other);
+                    }
+                    edge.line.setColor(Color.RED);
+                } else{
+                    System.out.println("Connected " + currentPoint.name + " to " + other.name);
+                    edge.line.setColor(Color.GREEN);
+                }
+
+            }
+
+            ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered();
+        }
+    }
+
+
+    private class GameEdge{
+        public InterestPoint a;
+        public InterestPoint b;
+        public Polyline line;
+
+        public GameEdge(InterestPoint a, InterestPoint b, Polyline line) {
+            this.a = a;
+            this.b = b;
+            this.line = line;
+        }
     }
 }
