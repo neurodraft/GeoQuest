@@ -90,10 +90,18 @@ public class CardStartFragment extends Fragment {
                 quizz_button.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
+/*
                         MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
                         mapsFragment.conqueredCurrentPoint();
+
                         quizz_button.setEnabled(false);
                         quizz_button.setText("Quizz Concluído");
+                        */
+                        getParentFragmentManager().beginTransaction()
+                                .setReorderingAllowed(true)
+                                .replace(R.id.card_content, new QuizzFragment(interestPoint))
+                                .addToBackStack(null)
+                                .commit();
                     }
                 });
             }
