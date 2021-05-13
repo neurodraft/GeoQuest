@@ -1,9 +1,5 @@
 package com.equipa18.geoquest.map;
 
-import androidx.lifecycle.ViewModelProvider;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,18 +10,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.equipa18.geoquest.world.InterestPoint;
 import com.equipa18.geoquest.R;
-
-import java.io.IOException;
-import java.io.InputStream;
+import com.equipa18.geoquest.player.PlayerManager;
 
 public class InterestPointFragment extends Fragment {
 
     private ImageView headerIcon;
+    private InterestPoint interestPoint;
+
+    public InterestPointFragment(InterestPoint interestPoint) {
+        this.interestPoint = interestPoint;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -34,24 +33,25 @@ public class InterestPointFragment extends Fragment {
 
         headerIcon = view.findViewById(R.id.header_icon);
 
-        Bundle b = getArguments();
 
-        if(b.getBoolean("isConquered")){
+        if(PlayerManager.getCurrentPlayer().hasConquered(interestPoint.id)){
             headerIcon.setColorFilter(Color.GREEN);
-        } else if(b.getBoolean("isUnlocked")){
+        } else if(PlayerManager.getCurrentPlayer().hasUnlocked(interestPoint.id)){
             headerIcon.setColorFilter(Color.RED);
         }
 
-        ((TextView)view.findViewById(R.id.interest_point_title)).setText(b.getString("title"));
+        ((TextView)view.findViewById(R.id.interest_point_title)).setText(interestPoint.name);
 
         getParentFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.card_content, CardStartFragment.class, getArguments())
+                .replace(R.id.card_content, new CardStartFragment(interestPoint))
                 .commit();
 
 
         return view;
     }
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

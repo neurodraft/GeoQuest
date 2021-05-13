@@ -1,4 +1,4 @@
-package com.equipa18.geoquest;
+package com.equipa18.geoquest.world;
 
 public class GeoCoordinates {
     public double latitude;

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Pelourinho de Setúbal",
     "geoCoordinates": {
       "latitude": 38.523739,
@@ -26,6 +27,7 @@
     ]
   },
   {
+    "id": 2,
     "name": "Castelo de São Filipe",
     "geoCoordinates": {
       "latitude": 38.517715,
@@ -34,6 +36,7 @@
     "imageFile": "640px-Fortaleza_de_S.Filipe.jpg"
   },
   {
+    "id": 3,
     "name": "Palacete da Família Feu Guião",
     "geoCoordinates": {
       "latitude": 38.52434441,
@@ -42,6 +45,7 @@
     "imageFile": "800px-Feu_Guiao2646.jpg"
   },
   {
+    "id": 4,
     "name": "Quinta do Esteval",
     "geoCoordinates": {
       "latitude": 38.5214558,
@@ -50,6 +54,7 @@
     "imageFile": "799px-Quinta_do_Esteval_II.jpg"
   },
   {
+    "id": 5,
     "name": "Casa das Quatro Cabeças",
     "geoCoordinates": {
       "latitude": 38.52438078,
@@ -58,6 +63,7 @@
     "imageFile": "640px-Casa_quatro_cabecas_01.jpg"
   },
   {
+    "id": 6,
     "name": "Chafariz da Praça Teófilo Braga",
     "geoCoordinates": {
       "latitude": 38.523893,
@@ -66,6 +72,7 @@
     "imageFile": "800px-Chafariz_Sapal01.jpg"
   },
   {
+    "id": 7,
     "name": "Forte de Santiago do Outão",
     "geoCoordinates": {
       "latitude": 38.488853,
@@ -74,6 +81,7 @@
     "imageFile": "800px-Forte_Outão_01.jpg"
   },
   {
+    "id": 8,
     "name": "Portal da Gafaria",
     "geoCoordinates": {
       "latitude": 38.5259394,
@@ -82,6 +90,7 @@
     "imageFile": "Portal_da_Gafaria_em_Setúbal.jpg"
   },
   {
+    "id": 9,
     "name": "Igreja de Santa Maria da Graça",
     "geoCoordinates": {
       "latitude": 38.524411,
@@ -90,6 +99,7 @@
     "imageFile": "Santa_Maria_da_Graca_Church.jpg"
   },
   {
+    "id": 10,
     "name": "Cruzeiro de Setúbal",
     "geoCoordinates": {
       "latitude": 38.524517,
@@ -98,6 +108,7 @@
     "imageFile": "400px-Jesus_Convent_5.jpg"
   },
   {
+    "id": 11,
     "name": "Convento de Jesus de Setúbal",
     "geoCoordinates": {
       "latitude": 38.526147,
@@ -106,6 +117,7 @@
     "imageFile": "Jesus_Convent_1.jpg"
   },
   {
+    "id": 12,
     "name": "Igreja de São Julião de Setúbal",
     "geoCoordinates": {
       "latitude": 38.5239,
@@ -114,6 +126,7 @@
     "imageFile": "Church_in_Praca_do_Bocage.jpg"
   },
   {
+    "id": 13,
     "name": "Aqueduto de Setúbal",
     "geoCoordinates": {
       "latitude": 38.530435,
@@ -122,6 +135,7 @@
     "imageFile": "800px-Setubal_aqueduto_02.jpg"
   },
   {
+    "id": 14,
     "name": "Fábrica romana de Salga",
     "geoCoordinates": {
       "latitude": 38.523534,
@@ -130,6 +144,7 @@
     "imageFile": "450px-Fábrica_romana_de_Salga_05.jpg"
   },
   {
+    "id": 15,
     "name": "Fontanário em Vila Nogueira de Azeitão",
     "geoCoordinates": {
       "latitude": 38.51723055,
@@ -138,6 +153,7 @@
     "imageFile": "450px-Fontanário_em_Vila_Nigueira_de_Azeitão.jpg"
   },
   {
+    "id": 16,
     "name": "Palácio da Quinta das Torres",
     "geoCoordinates": {
       "latitude": 38.520108,
@@ -147,6 +163,7 @@
   },
 
   {
+    "id": 17,
     "name": "Palácio dos Duques de Aveiro",
     "geoCoordinates": {
       "latitude": 38.518488,
@@ -155,6 +172,7 @@
     "imageFile": "800px-Palácio_dos_Duques_de_Aveiro,_Vila_Nogueira_de_Azeitão_09.jpg"
   },
   {
+    "id": 18,
     "name": "Pelourinho de Vila Nogueira de Azeitão",
     "geoCoordinates": {
       "latitude": 38.518672,
@@ -163,6 +181,7 @@
     "imageFile": "407px-Pelourinho_de_Vila_Nogueira_de_Azeitão_-_Portugal_(33922519618).jpg"
   },
   {
+    "id": 19,
     "name": "Convento de Nossa Senhora da Arrábida",
     "geoCoordinates": {
       "latitude": 38.473599,
@@ -171,6 +190,7 @@
     "imageFile": "800px-Convento_Arrábida.jpg"
   },
   {
+    "id": 20,
     "name": "Igreja de São Lourenço",
     "geoCoordinates": {
       "latitude": 38.518934,
@@ -179,6 +199,7 @@
     "imageFile": "800px-Igreja_de_São_Lourenço_-_Azeitão_-_Portugal_(32856016997).jpg"
   },
   {
+    "id": 21,
     "name": "Palácio da Bacalhoa",
     "geoCoordinates": {
       "latitude": 38.52386294,
@@ -187,6 +208,7 @@
     "imageFile": "Quinta_da_Bacalhôa_(11199645583).jpg"
   },
   {
+    "id": 22,
     "name": "Convento de Brancanes",
     "geoCoordinates": {
       "latitude": 38.53287398,

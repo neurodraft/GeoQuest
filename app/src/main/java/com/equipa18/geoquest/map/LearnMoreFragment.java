@@ -9,10 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.equipa18.geoquest.world.InterestPoint;
 import com.equipa18.geoquest.R;
 
 
 public class LearnMoreFragment extends Fragment {
+    private InterestPoint interestPoint;
+
+    public LearnMoreFragment(InterestPoint interestPoint) {
+        this.interestPoint = interestPoint;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
