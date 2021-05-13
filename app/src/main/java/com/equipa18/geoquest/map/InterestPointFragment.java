@@ -35,6 +35,7 @@ public class InterestPointFragment extends Fragment {
 
 
         if(PlayerManager.getCurrentPlayer().hasConquered(interestPoint.id)){
+            headerIcon.setImageResource(R.drawable.ic_baseline_flag_48);
             headerIcon.setColorFilter(Color.GREEN);
         } else if(PlayerManager.getCurrentPlayer().hasUnlocked(interestPoint.id)){
             headerIcon.setColorFilter(Color.RED);
@@ -57,14 +58,11 @@ public class InterestPointFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
     }
 
-
-    public void conquered() {
-    }
 
     public void wasConquered() {
+        headerIcon.setImageResource(R.drawable.ic_baseline_flag_48);
         headerIcon.setColorFilter(Color.GREEN);
     }
 }

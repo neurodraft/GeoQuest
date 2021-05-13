@@ -1,14 +1,22 @@
 package com.equipa18.geoquest.map;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +32,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -80,6 +89,13 @@ public class MapsFragment extends Fragment {
 
             customizeStyle();
 
+            conqueredBitmap = vectorToBitmap(R.drawable.ic_baseline_flag_48, Color.GREEN, 60, 20);
+            lockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
+                    Color.GRAY, 0 ,10);
+            unlockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
+                    Color.RED, 0 ,10);
+
+
             prepareMapContent();
 
             setActions();
@@ -89,6 +105,9 @@ public class MapsFragment extends Fragment {
     };
 
     private boolean showingCard = false;
+    private BitmapDescriptor conqueredBitmap;
+    private BitmapDescriptor lockedBitmap;
+    private BitmapDescriptor unlockedBitmap;
 
     private void customizeStyle() {
         try {
@@ -127,7 +146,19 @@ public class MapsFragment extends Fragment {
         }
     }
 
+    private BitmapDescriptor vectorToBitmap(@DrawableRes int id, @ColorInt int color, int offsetX, int offsetY) {
+        Drawable vectorDrawable = ResourcesCompat.getDrawable(getResources(), id, null);
+        assert vectorDrawable != null;
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth()+offsetX,
+                vectorDrawable.getIntrinsicHeight() + offsetY, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0 + offsetX, 0 + offsetY, canvas.getWidth(), canvas.getHeight());
+        DrawableCompat.setTint(vectorDrawable, color);
+        vectorDrawable.draw(canvas);
 
+        Bitmap resizedBitmap =Bitmap.createBitmap(bitmap, 0,0,bitmap.getWidth(), bitmap.getHeight() - offsetY);
+        return BitmapDescriptorFactory.fromBitmap(resizedBitmap);
+    }
 
     private void prepareMapContent(){
         markerInterestPointMap = new HashMap<>();
@@ -147,10 +178,11 @@ public class MapsFragment extends Fragment {
 
             //polygonOptions.add(point);
 
+
             // Create marker for InterestPoint with name and image
             MarkerOptions markerOptions = new MarkerOptions().position(point)
                     .title(interestPoint.name)
-                    .icon(BitmapDescriptorFactory.defaultMarker(120));
+                    .icon(lockedBitmap);
 
 
 
@@ -256,7 +288,7 @@ public class MapsFragment extends Fragment {
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(a.geoCoordinates.latitude, a.geoCoordinates.longitude),
                         new LatLng(b.geoCoordinates.latitude, b.geoCoordinates.longitude))
-                .width(3)
+                .width(4)
                 .color(Color.GRAY));
 
 
@@ -316,6 +348,14 @@ public class MapsFragment extends Fragment {
             }
         }
 
+        for(Marker marker : markerInterestPointMap.keySet()){
+            if(player.hasConquered(markerInterestPointMap.get(marker).id)){
+                marker.setIcon(conqueredBitmap);
+            } else if(player.hasUnlocked(markerInterestPointMap.get(marker).id)){
+                marker.setIcon(unlockedBitmap);
+            }
+        }
+
 
 
 
@@ -343,6 +383,7 @@ public class MapsFragment extends Fragment {
                 getParentFragmentManager().beginTransaction()
                         .setReorderingAllowed(true)
                         .add(R.id.fragment_container_view, new InterestPointFragment(interestPoint))
+                        .addToBackStack(null)
                         .commit();
 
                 showingCard = true;
@@ -358,10 +399,18 @@ public class MapsFragment extends Fragment {
             public void onMapClick(LatLng latLng) {
                 if(showingCard){
 
-                    getParentFragmentManager().beginTransaction()
+                    /*getParentFragmentManager().beginTransaction()
                             .setReorderingAllowed(true)
                             .remove(getParentFragmentManager().findFragmentById(R.id.fragment_container_view))
-                            .commit();
+                            .commitAllowingStateLoss();
+
+                     */
+                    int backStackEntry = getParentFragmentManager().getBackStackEntryCount();
+                    if (backStackEntry > 0) {
+                        for (int i = 0; i < backStackEntry; i++) {
+                            getParentFragmentManager().popBackStackImmediate();
+                        }
+                    }
                     showingCard = false;
                     currentPoint = null;
 
@@ -374,6 +423,9 @@ public class MapsFragment extends Fragment {
         if(currentPoint != null){
             System.out.println("Conquered " + currentPoint.name);
             PlayerManager.getCurrentPlayer().conquerPoint(currentPoint.id);
+
+            List<InterestPoint> unlockedPoints = new ArrayList<>();
+
             for(GameEdge edge : edgeMap.get(currentPoint)){
                 InterestPoint other;
                 if(edge.a == currentPoint){
@@ -385,6 +437,7 @@ public class MapsFragment extends Fragment {
                 if(!PlayerManager.getCurrentPlayer().hasConquered(other.id)){
                     if(!PlayerManager.getCurrentPlayer().hasUnlocked(other.id)){
                         System.out.println("Unlocked " + other.name);
+                        unlockedPoints.add(other);
                         PlayerManager.getCurrentPlayer().unlockPoint(other.id);
                     }
                     edge.line.setColor(Color.RED);
@@ -393,6 +446,14 @@ public class MapsFragment extends Fragment {
                     edge.line.setColor(Color.GREEN);
                 }
 
+            }
+            for(Marker marker : markerInterestPointMap.keySet()){
+                InterestPoint element = markerInterestPointMap.get(marker);
+                if(element == currentPoint){
+                    marker.setIcon(conqueredBitmap);
+                } else if(unlockedPoints.contains(element)){
+                    marker.setIcon(unlockedBitmap);
+                }
             }
 
             ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered();
