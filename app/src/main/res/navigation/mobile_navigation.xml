@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.equipa18.geoquest.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_settings"
+        android:name="com.equipa18.geoquest.ui.settings.SettingsFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

@@ -11,7 +11,40 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="comms_header">Communitcation</string>
+    <string name="appearance_header">Appearance</string>
+    <string name="audio_header">Audio</string>
+    <string name="local_header">Localization</string>
+
+    <!-- Comms Preferences -->
+    <string name="notifs_title">Notifications</string>
+
+    <!-- Audio Preferences -->
+    <string name="sfx_title">Sound Effects</string>
+    <string name="music_title">Music</string>
+
+    <!-- Appearance Preferences -->
+    <string name="theme_title">Theme</string>
+
+    <!-- Localization Preferences -->
+    <string name="lang_title">Language</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>
