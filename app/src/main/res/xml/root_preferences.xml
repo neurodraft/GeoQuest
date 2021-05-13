@@ -23,9 +23,13 @@
 
     <PreferenceCategory app:title="@string/appearance_header">
 
-        <SwitchPreferenceCompat
-            app:key="appearance"
-            app:title="@string/theme_title" />
+        <ListPreference
+            app:defaultValue="dark"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:key="theme"
+            app:title="@string/theme_title"
+            app:useSimpleSummaryProvider="true"/>
 
     </PreferenceCategory>
 
