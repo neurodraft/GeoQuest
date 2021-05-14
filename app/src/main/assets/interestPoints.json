@@ -15,8 +15,8 @@
         "category": "0"
       },
       {
-        "question": "De que material é feito o Pelourinho?",
-        "answer": "Mármore branco",
+        "question": "O que se encontra no topo do Pelourinho?",
+        "answer": "A cruz de Santiago",
         "category": "3"
       },
       {
@@ -25,8 +25,8 @@
         "category": "2"
       },
       {
-        "question": "Em que século foi construído?",
-        "answer": "XVIII",
+        "question": "Quando foi construído?",
+        "answer": "Séc. XVIII",
         "category": "2"
       },
       {
@@ -64,12 +64,12 @@
       {
         "question": "Quando foi inaugurado o Castelo de São Filipe?",
         "answer": "1582",
-        "category": "3"
+        "category": "2"
       },
       {
         "question": "Qual o estilo de arquitetura do Castelo de São Filipe?",
         "answer": "Estilo Maneirista",
-        "category": "3"
+        "category": "6"
       }
     ]
   },
@@ -84,8 +84,8 @@
     "learnmore": "Situado na zona do Bairro de Troino, na freguesia da Nossa Senhora da Anunciada , em Setúbal. É um palacete, construído em meados do séc. XVIII, com enorme simplicidade arquitetónica, com alguns motivos de ligeira magnificência, tais como o brasão da família e quatro gárgulas. A sua grandeza serve de contraste aos pequenos edifícios contíguos, com menores dimensões e humildade.\nJulga-se que o nome terá surgido do mandante da obra, José da Rosa Guião e Abreu, que na época, era um afamado desembargador, em plena ascensão social. A outra designação, a do Palácio do Adeantado, atribui-se também ao facto de José da Rosa desempenhar, simultaneamente, funções de Adeantado do Reino.\nO edifício manteve-se nas mãos da família Feu Guião até ao ano de 1881, pois nesse mesmo ano foi arrematado em hasta pública por Manuel Maria Valente.\nApós servir de residência durante quase dois séculos, o edifício é ocupado por diversas instituições, entre as quais uma escola primária. Mas, aquando do terramoto de 1969, que afetou toda a zona da cidade de Setúbal, o palácio foi atingido e, com o passar dos anos, foi-se degradando e atualmente, encontra-se num estado de degradação inacreditável, sendo esta uma edificação de grande magnitude que se destaca claramente de tudo o resto que o circunda. \n",
     "quizz": [
       {
-        "question": "Em que século foi construído o Palacete da Família Feu Guião?",
-        "answer": "XVIII",
+        "question": "Quando foi construído o Palacete da Família Feu Guião?",
+        "answer": "Séc. XVIII",
         "category": "2"
       },
       {
@@ -95,17 +95,17 @@
       },
       {
         "question": "Quantas gárgulas contém o Palacete da Família Feu Guião?",
-        "answer": "4",
+        "answer": "4 gárgulas",
         "category": "3"
       },
       {
-        "question": "Até que ano pertenceu o palácio à familia Feu Guião?",
+        "question": "Até quando pertenceu o palácio à familia Feu Guião?",
         "answer": "1881",
         "category": "2"
       },
       {
         "question": "Que acontecimento acelerou a deterioração do palácio?",
-        "answer": "Terramoto",
+        "answer": "Um Terramoto",
         "category": "4"
       }
     ]
@@ -128,16 +128,16 @@
       {
         "question": "Que fruto é típico da Quinta do Esteval?",
         "answer": "Uva",
-        "category": "1"
+        "category": "3"
       },
       {
-        "question": "Em que século foi construída a mansão da Quinta do Esteval?",
-        "answer": "XVII",
+        "question": "quando foi construída a mansão da Quinta do Esteval?",
+        "answer": "Séc. XVII",
         "category": "2"
       },
       {
-        "question": "A quantos quilómetros fica a Quinta do Esteval da praia?",
-        "answer": "6",
+        "question": "Qual a estaçao ferróviaria mais próxima da Quinta do Esteval?",
+        "answer": "Estação Ferroviária de Setúbal",
         "category": "0"
       },
       {
@@ -158,8 +158,8 @@
     "learnmore": "Casa das Quatro Cabeças é uma casa situada no bairro de Troino, em Setúbal, na esquina da Rua Direita de Troino (atual Rua Fran Pacheco) n.º 44 com a Travessa do Carmo n.º 29.\n\nNa porta principal, a da Rua Fran Paxeco, o lintel tem uma inscrição em latim (Si Deus pro nobis, quis contra nos) e, a meio, um busto, que se afirma representar o homem que impediu os conspiradores de terem sucesso na sua missão.\nNo cunhal da casa, um novo busto, que se afirma representar D. João II.\n",
     "quizz": [
       {
-        "question": "Na parte superior da porta principal existe uma frase, que está escrita em...",
-        "answer": "Latim",
+        "question": "Na parte superior da porta principal existe...",
+        "answer": "Uma frase em Latim",
         "category": "3"
       },
       {
@@ -169,18 +169,18 @@
       },
       {
         "question": "Quantas cabeças tem a casa?",
-        "answer": "4",
+        "answer": "4 cabeças",
         "category": "3"
       },
       {
-        "question": "O que representa o busto da Casa das Quatro Cabeças",
+        "question": "O que representa o busto da Casa das Quatro Cabeças?",
         "answer": "O homem que impediu os conspiradores de terem sucesso na sua missão",
         "category": "3"
       },
       {
         "question": "O novo busto da casa representa...",
         "answer": "D. João II",
-        "category": "1"
+        "category": "7"
       }
     ]
   },
@@ -195,7 +195,7 @@
     "learnmore": "O Chafariz da Praça Teófilo Braga, de seu nome inicial Chafariz do Sapal, foi mandado construir em 1697 (segundo inscrição na zona posterior), pela Câmara de Setúbal na Praça do Sapal, atual Praça de Bocage, onde permaneceu até 1937.\nA água que vinha dar a este chafariz, era oriunda de uma nascente localizada na Arca d'Água, em Alferrara, a cerca de 3 km da Praça do Bocage, e era conduzida pelo Aqueduto dos Arcos.\nMais tarde, no século XX, o chafariz foi desmontado e instalado na Praça Teófilo Braga, onde está atualmente, desempenhando funções meramente estéticas.\nNeste monumento, encontra-se o escudo português encimado por coroa, sustentado por dois anjos.\n",
     "quizz": [
       {
-        "question": "Em que ano foi mandado construir o Chafariz da Praça Teófilo Braga?",
+        "question": "Quando foi mandado construir o Chafariz da Praça Teófilo Braga?",
         "answer": "1697",
         "category": "2"
       },
@@ -210,13 +210,13 @@
         "category": "1"
       },
       {
-        "question": "Em que ano foi mudado, o chafariz, da Praça do Bocage para a Praça Teófilo de Braga?",
+        "question": "Quando foi mudado, o chafariz, da Praça do Bocage para a Praça Teófilo de Braga?",
         "answer": "1937",
         "category": "2"
       },
       {
         "question": "O escudo português é sustentado por quantos anjos?",
-        "answer": "2",
+        "answer": "2 anjos",
         "category": "3"
       }
     ]
@@ -237,14 +237,14 @@
         "category": "0"
       },
       {
-        "question": "Em que ano foi construído o Forte de Santiago do Outão?",
+        "question": "Quando foi construído o Forte de Santiago do Outão?",
         "answer": "1572",
         "category": "2"
       },
       {
         "question": "Quem construiu o Forte de Santiago do Outão?",
         "answer": "D. Sebastião",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Qual foi o objetivo da sua construção?",
@@ -254,7 +254,7 @@
       {
         "question": "Que estilos foram utilizados na sua construção?",
         "answer": "Gótico e Maneirista",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "Que nome se dá, atualmente, ao forte?",
@@ -274,8 +274,8 @@
     "learnmore": "Local medieval para recolher os leprosos. Constituído por duas ombreiras e verga da porta (vestígio raro) com cinco arcos gravados, em que o central mostra um escudo. Na parte superior tem a seguinte inscrição em latim: \"Vanitas vanitatum, et omnia vanitas\" (vaidade das vaidades, é tudo vaidade). Finais do séc. XV ou inícios do séc. XVI.",
     "quizz": [
       {
-        "question": "No Portal da Gafaria existe uma frase, que está escrita em...",
-        "answer": "Latim",
+        "question": "No Portal da Gafaria existe...",
+        "answer": "Uma frase em Latim",
         "category": "3"
       },
       {
@@ -284,8 +284,8 @@
         "category": "3"
       },
       {
-        "question": "Em que século foi construído o Portal da Gafaria?",
-        "answer": "Início do século XVI",
+        "question": "Quando foi construído o Portal da Gafaria?",
+        "answer": "Início do séc. XVI",
         "category": "2"
       },
       {
@@ -295,7 +295,7 @@
       },
       {
         "question": "Quantas ombreiras constituem o Portal da Gafaria?",
-        "answer": "2",
+        "answer": "2 ombreiras",
         "category": "3"
       }
     ]
@@ -311,14 +311,14 @@
     "learnmore": "A Igreja de Santa Maria da Graça ou Sé de Setúbal, matriz de Setúbal, com arquitetura original de António Rodrigues, situa-se no coração do primitivo burgo medieval setubalense, tendo sido em torno desta que se desenvolveu o mais importante bairro medieval da cidade, assim como o centro religioso e político-administrativo.[1]\nFundada no século XIII, originalmente de estilo barroco e maneirista, o atual edifício é uma reconstrução do alto renascimento com uma imponente fachada maneirista. \nDuas torres, altas e robustas, ladeiam a fachada imponente, com entrada num portal serliano. Dentro da igreja destacam-se as colunas da ordem toscana, com frescos de finais do século XVIII, o tecto da segunda metade do século XVIII, os altares colaterais, a talha dourada da capela-mor e os azulejos do final do mesmo século.\nNuma rua lateral, junto ao Terreiro de Santa Maria, encontra-se o pórtico gótico de uma antiga hospedaria – o Hospital de João Palmeiro.\n",
     "quizz": [
       {
-        "question": "Em que século foi fundada a Igreja de Santa Maria da Graça?",
-        "answer": "XIII",
+        "question": "Quando foi fundada a Igreja de Santa Maria da Graça?",
+        "answer": "Séc. XIII",
         "category": "2"
       },
       {
         "question": "Que arquiteto desenhou a Igreja de Santa Maria da Graça?",
         "answer": "António Rodrigues",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Onde se situa a Igreja de Santa Maria da Graça?",
@@ -328,11 +328,11 @@
       {
         "question": "Que estilos definem a arquitetura da Igreja de Santa Maria da Graça?",
         "answer": "Estilo Barroco e Maneirista",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "Dentro da igreja destacam-se as colunas da ordem toscana, com frescos de finais do século...",
-        "answer": "XVIII",
+        "answer": "Séc. XVIII",
         "category": "2"
       }
     ]
@@ -355,10 +355,10 @@
       {
         "question": "Quem mandou erguer o Cruzeiro de Setúbal?",
         "answer": "D. Jorge de Lencastre",
-        "category": "1"
+        "category": "7"
       },
       {
-        "question": "Em que ano foi classificado como monumento nacional?",
+        "question": "Quando foi classificado como monumento nacional?",
         "answer": "1910",
         "category": "2"
       },
@@ -368,7 +368,7 @@
         "category": "3"
       },
       {
-        "question": "Em que ano foi restaurado o Cruzeiro de Setúbal?",
+        "question": "Quando foi restaurado o Cruzeiro de Setúbal?",
         "answer": "1985",
         "category": "2"
       }
@@ -385,7 +385,7 @@
     "learnmore": "O Convento de Jesus de Setúbal foi fundado em 1489 por Justa Rodrigues Pereira, fidalga da casa dos duques de Beja e ama de D. Manuel I. \nO Convento de Jesus foi um convento feminino português das freiras da Ordem das Clarissas localizado em Setúbal e ainda hoje continua as suas funções religiosas, sendo que, atualmente, também serve de museu.\nO Convento de Jesus encontra-se classificado como monumento nacional desde 1910 e em 2011 como Marca do Património Europeu da Comissão Europeia e é considerado propriedade do Estado Português.\n",
     "quizz": [
       {
-        "question": "Em que ano foi fundado o Convento de Jesus de Setúbal?",
+        "question": "Quando foi fundado o Convento de Jesus de Setúbal?",
         "answer": "1489",
         "category": "2"
       },
@@ -422,14 +422,14 @@
     "learnmore": "A Igreja de São Julião fica situada em Setúbal, na Praça de Bocage.\nA fundação da Igreja de São Julião teve lugar em data incerta da segunda metade do século XIII. Em 1513, D. Manuel I ordenou a sua reconstrução. A obra decorreu entre 1516 e 1520, sendo o traçado da igreja atribuído a João de Castilho e a direção da obra ao mestre pedreiro João Favacho. Em 1570 volta a ser objeto de uma reedificação devido para reparação dos danos provocados pelo terramoto de 1531. O terramoto de 1755 volta a danificá-la seriamente, sendo objeto de uma nova reconstrução no final do século XVIII.\nAs paredes das naves, da capela-mor e da capela do Senhor dos Passos estão revestidas com painéis de azulejos recortados, com cercadura rococó polícroma e rodapé marmoreado.\nOs azulejos datam de cerca de 1790.\nOs painéis das naves têm como tema passos da vida de São Julião e de Santa Basilissa.\n",
     "quizz": [
       {
-        "question": "Em que século foi fundada a Igreja de São Julião?",
-        "answer": "XIII",
+        "question": "Quando foi fundada a Igreja de São Julião?",
+        "answer": "Séc. XIII",
         "category": "2"
       },
       {
         "question": "Quem ordenou a sua primeira reconstrução?",
         "answer": "D. Manuel I",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Onde se localiza a Igreja de São Julião?",
@@ -439,11 +439,11 @@
       {
         "question": "Que estilo de arquitetura foi utilizado na sua reconstrução?",
         "answer": "Estilo Manuelino",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "Os azuelajos da Igreja de São Julião são de finais do século...",
-        "answer": "XVIII",
+        "answer": "Séc. XVIII",
         "category": "2"
       }
     ]
@@ -459,12 +459,12 @@
     "learnmore": "O Aqueduto de Setúbal, ou Aqueduto dos Arcos é um aqueduto que tinha o seu início na Arca d'Água (Alferrara), e terminava no centro da cidade de Setúbal.\nConstruído no final do século XV, no reinado de D. João II, prolongava-se por vários quilómetros, desde a nascente, até às muralhas da cidade com o propósito de abastecer de água a Vila de Setúbal.\nEm 1693, foi construído o Chafariz do Sapal em frente ao edifício dos Paços do Concelho de Setúbal. \nO abastecimento de água à cidade deixou, entretanto, de depender deste aqueduto.\nA expansão urbanística da cidade reduziu os vestígios do aqueduto a alguns troços, um dos quais se localiza no centro da cidade, no local do antigo campo de futebol do Vitória de Setúbal, na (Estrada dos Arcos).\nO aqueduto foi declarado Imóvel de Interesse Público pelo Decreto n.º 516/71, de 22 de novembro de 1971. \n",
     "quizz": [
       {
-        "question": "Em que século foi construído o Aqueduto de Setúbal?",
-        "answer": "XV",
+        "question": "Quando foi construído o Aqueduto de Setúbal?",
+        "answer": "Séc. XV",
         "category": "2"
       },
       {
-        "question": "Em que ano foi declarado Imóvel de Interesse Público?",
+        "question": "Quando foi declarado Imóvel de Interesse Público?",
         "answer": "1971",
         "category": "2"
       },
@@ -481,7 +481,7 @@
       {
         "question": "Quem ordenou a construção do aqueduto?",
         "answer": "D. João II",
-        "category": "1"
+        "category": "7"
       }
     ]
   },
@@ -502,11 +502,11 @@
       },
       {
         "question": "Por quantas cetárias é constituida a fábrica?",
-        "answer": "14",
+        "answer": "14 cetárias",
         "category": "3"
       },
       {
-        "question": "Em que ano foi descoberta a Fábrica romana de Salga?",
+        "question": "Quando foi descoberta a Fábrica romana de Salga?",
         "answer": "1969",
         "category": "2"
       },
@@ -517,7 +517,7 @@
       },
       {
         "question": "Porque foi abandonada?",
-        "answer": "Decadência dos mercados romanos",
+        "answer": "A Decadência dos mercados romanos",
         "category": "4"
       }
     ]
@@ -545,7 +545,7 @@
       {
         "question": "Que estilo de arquitetura adotou?",
         "answer": "Estilo Barroco",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "O seu volume está dividido em quantas partes?",
@@ -553,8 +553,8 @@
         "category": "3"
       },
       {
-        "question": "De acordo com a lenda, quem beber água deste fontanário...",
-        "answer": "Fica ligado a Azeitão para sempre",
+        "question": "De acordo com a lenda, o que acontece quando uma pessoa bebe do fontanário?",
+        "answer": "Fica ligada a Azeitão para sempre",
         "category": "4"
       }
     ]
@@ -572,7 +572,7 @@
       {
         "question": "Qual o estilo que segue a arquitetura do Palácio da Quinta das Torres?",
         "answer": "Estilo Renascentista",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "Onde se localiza o Palácio da Quinta das Torres?",
@@ -585,13 +585,13 @@
         "category": "5"
       },
       {
-        "question": "Em que século foi construído o Palácio da Quinta das Torres?",
-        "answer": "XVI",
+        "question": "Quando foi construído o Palácio da Quinta das Torres?",
+        "answer": "Séc.  XVI",
         "category": "2"
       },
       {
         "question": "Quantos arcos estão presentes no seu pátio?",
-        "answer": "3",
+        "answer": "3 arcos",
         "category": "3"
       }
     ]
@@ -615,17 +615,17 @@
       {
         "question": "Quem ordenou a sua construção?",
         "answer": "D. Jorge de Lencastre",
-        "category": "1"
+        "category": "7"
       },
       {
-        "question": "Em que ano foi construído?",
+        "question": "Quando foi construído?",
         "answer": "Entre 1521 e 1537",
-        "category": ""
+        "category": "2"
       },
       {
         "question": "Que estilo segue a sua arquitetura?",
         "answer": "Renascentismo Clássico",
-        "category": "3"
+        "category": "6"
       },
       {
         "question": "O que aconteceu em 12 de Janeiro de 1759 no palácio?",
@@ -656,7 +656,7 @@
       },
       {
         "question": "Quando ocorreu a sua reconstrução?",
-        "answer": "Século XX",
+        "answer": "Séc. XX",
         "category": "2"
       },
       {
@@ -666,7 +666,7 @@
       },
       {
         "question": "Quantos degraus tem o pelourinho?",
-        "answer": "4",
+        "answer": "4 degraus",
         "category": "3"
       }
     ]
@@ -682,7 +682,7 @@
     "learnmore": "O Convento da Nossa Senhora da Arrábida, que pertenceu à Província Franciscana de Arrábida, fica meio escondido entre as árvores da vertente sul da Serra da Arrábida, virada para o mar, no concelho de Setúbal. Esta construção do século XVI foi outrora um convento franciscano. Está hoje inclusa no Parque Natural da Arrábida.\nA fundação de um Convento na Serra da Arrábida data de fins de 1538-1539, quando Dom João de Lencastre 1º Duque de Aveiro prometeu a Frei Martinho (Martín de Santa Maria Benavides), um frade descalço andaluz da Ordem de São Francisco, cumprir o seu desejo de levar uma vida eremítica e dedicada exclusivamente a Nossa Senhora.\nEm 1650, D. Ana Manique de Lara, viúva do duque de Torres Novas e nora de D. Álvaro, mandou construir duas capelas.\nNeste Convento viveu Frei Agostinho da Cruz. \nPela sua importância e originalidade, o Convento da Arrábida foi, em 1977, classificado de interesse público.\n",
     "quizz": [
       {
-        "question": "Em que ano foi fundado o Convento de Nossa Senhora da Arrábida?",
+        "question": "Qaundo foi fundado o Convento de Nossa Senhora da Arrábida?",
         "answer": "1538/39",
         "category": "2"
       },
@@ -694,17 +694,17 @@
       {
         "question": "Quem viveu no Convento de Nossa Senhora da Arrábida?",
         "answer": "Frei Agustinho da Cruz",
-        "category": "1"
+        "category": "7"
       },
       {
-        "question": "Em que ano foi considerado Interesse Público?",
+        "question": "Quando foi considerado Interesse Público?",
         "answer": "1977",
         "category": "2"
       },
       {
         "question": "Em 1650 quem mandou construir as duas capelas do Convento de Nossa Senhora da Arrábida?",
         "answer": "D. Ana Manique de Lara ",
-        "category": "1"
+        "category": "7"
       }
     ]
   },
@@ -724,18 +724,18 @@
         "category": "0"
       },
       {
-        "question": "Em que século foi construída a Igreja de São Lourenço?",
-        "answer": "XVI",
+        "question": "Quando foi construída a Igreja de São Lourenço?",
+        "answer": "Séc. XVI",
         "category": "2"
       },
       {
         "question": "Quem pintou os azulejos da Igreja de São Lourenço?",
         "answer": "António de Oliveira Bernardes",
-        "category": "1"
+        "category": "7"
       },
       {
-        "question": "De que material é composto o altar da Igreja de São Lourenço?",
-        "answer": "Mármore Policromo",
+        "question": "O que é composto por Mármore Policromo na Igreja de São Lourenço?",
+        "answer": "O altar",
         "category": "3"
       },
       {
@@ -768,7 +768,7 @@
       {
         "question": "Em 1936 quem comprou e restaurou o Palácio da Bacalhoa?",
         "answer": "Orlena Scoville",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Qual foi o objetivo da sua restauração?",
@@ -793,7 +793,7 @@
     "learnmore": "O Convento de Nossa Senhora dos Anjos de Brancanes, dito mais simplesmente Convento de Brancanes, em Setúbal, foi fundado em 1682 por Frei António das Chagas, para nele se formarem missionários na sequência do prestígio apostólico dos frades franciscanos conhecidos pelos ‘missionários do Varatojo’.\nAo longo do Século XX, o edifício de rara beleza foi quartel militar e estabelecimento prisional depois de 1998 até 2007. Totalmente desativado, veio então a ser vendido a uma entidade privada.\nAlguns elementos maneiristas visíveis na sobriedade da fachada da igreja delimitada por cunhais de alvenaria encimados por pináculos, com alteamento de empena em frontão curvo delimitada por cornija e centralizada por nicho, hoje vazado\n",
     "quizz": [
       {
-        "question": "Em que ano foi fundado o Convento de Brancanes?",
+        "question": "Quando foi fundado o Convento de Brancanes?",
         "answer": "1682",
         "category": "2"
       },
@@ -810,12 +810,12 @@
       {
         "question": "Quem fundou o Convento de Brancanes?",
         "answer": "Frei António das Chagas",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Qual o estilo de arquitetura do Convento de Brancanes?",
         "answer": "Estilo Maneirista",
-        "category": "3"
+        "category": "6"
       }
     ]
   }
