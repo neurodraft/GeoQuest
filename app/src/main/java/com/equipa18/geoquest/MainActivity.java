@@ -2,10 +2,14 @@ package com.equipa18.geoquest;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
+import com.equipa18.geoquest.player.PlayerManager;
 import com.equipa18.geoquest.world.WorldManager;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,6 +18,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         /**
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          **/
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -53,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+
         //Read interest points from JSON in assets folder (database replacement)
         InputStream is = null;
         try {
@@ -61,7 +70,21 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
+        //Calling the text fields to populate based on login
+        View view = navigationView.getHeaderView(0);
+
+        TextView username = view.findViewById(R.id.username);
+        TextView email = view.findViewById(R.id.email);
+
+        //This is to populate the user information in the sidebar
+        username.setText(PlayerManager.getCurrentPlayer().getUsername());
+        email.setText(PlayerManager.getCurrentPlayer().getEmail());
     }
+
+
 
     @Override
     public boolean onSupportNavigateUp() {

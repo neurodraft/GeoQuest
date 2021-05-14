@@ -19,10 +19,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
-        email = (EditText) findViewById(R.id.login_email);
-        password = (EditText) findViewById(R.id.login_password);
-        login = (Button) findViewById(R.id.button_login);
-        register = (Button) findViewById(R.id.button_register);
+        email = findViewById(R.id.login_email);
+        password = findViewById(R.id.login_password);
+        login = findViewById(R.id.button_login);
+        register = findViewById(R.id.button_register);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

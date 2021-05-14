@@ -35,12 +35,16 @@ public class PlayerManager {
             success = false;
         } else {
         players.put(p.getEmail(), p);
+        setCurrentPlayer(p);
         }
-        //for debug only
-        if(players.isEmpty()) {
-            System.out.println("Fuck you");
-        }
+
         return success;
+    }
+
+    private static void setCurrentPlayer(Player p) {
+        if(p != null){
+            currentPlayer = p;
+        }
     }
 
     public static Player getPlayerFromMap(String key) {

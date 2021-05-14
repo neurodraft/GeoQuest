@@ -24,11 +24,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_register);
 
-        goToLogin = (Button) findViewById(R.id.button_gotologin);
-        register = (Button) findViewById(R.id.button_createAccount);
-        email = (EditText) findViewById(R.id.register_email);
-        password = (EditText) findViewById(R.id.register_password);
-        name = (EditText) findViewById(R.id.register_name);
+        goToLogin = findViewById(R.id.button_gotologin);
+        register = findViewById(R.id.button_createAccount);
+        email = findViewById(R.id.register_email);
+        password = findViewById(R.id.register_password);
+        name = findViewById(R.id.register_name);
 
         //Listeners for the register buttons
         register.setOnClickListener(new View.OnClickListener() {
