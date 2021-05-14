@@ -94,7 +94,7 @@
         "category": "1"
       },
       {
-        "question": "Quantas gárgulas contém o Palacete da Família Feu Guião?",
+        "question": "Qual dos seguintes está presente no Palacete da Família Feu Guião?",
         "answer": "4 gárgulas",
         "category": "3"
       },
@@ -168,7 +168,7 @@
         "category": "0"
       },
       {
-        "question": "Quantas cabeças tem a casa?",
+        "question": "Qual dos seguintes se encontra neste monumento?",
         "answer": "4 cabeças",
         "category": "3"
       },
@@ -395,9 +395,9 @@
         "category": "1"
       },
       {
-        "question": "Qual era a ordem do convento?",
+        "question": "A quem pertencia o convento?",
         "answer": "Ordem das Clarissas",
-        "category": "1"
+        "category": "7"
       },
       {
         "question": "Qual o proprietário atual do Convento de Jesus de Setúbal?",
@@ -501,7 +501,7 @@
         "category": "0"
       },
       {
-        "question": "Por quantas cetárias é constituida a fábrica?",
+        "question": "Por qual das seguintes é constituida a fábrica?",
         "answer": "14 cetárias",
         "category": "3"
       },
