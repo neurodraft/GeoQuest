@@ -5,14 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.equipa18.geoquest.player.Player;
+import com.equipa18.geoquest.player.PlayerManager;
+
 public class RegisterActivity extends AppCompatActivity {
-    private EditText email; //this is to validate later
-    private EditText password; //this too
-    private EditText name; //this... too
-    private Button login;
+    private EditText email;
+    private EditText password;
+    private EditText name;
+    private Button goToLogin;
     private Button register;
 
     @Override
@@ -20,20 +24,20 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_register);
 
-        login = (Button) findViewById(R.id.button_gotologin);
+        goToLogin = (Button) findViewById(R.id.button_gotologin);
         register = (Button) findViewById(R.id.button_createAccount);
         email = (EditText) findViewById(R.id.register_email);
         password = (EditText) findViewById(R.id.register_password);
         name = (EditText) findViewById(R.id.register_name);
 
+        //Listeners for the register buttons
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 register(name.getText().toString(), email.getText().toString(), password.getText().toString());
             }
         });
-
-        login.setOnClickListener(new View.OnClickListener() {
+        goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToLogin();
@@ -41,13 +45,36 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    /*the parameters are unused for now, they will be used to
-    verify the registration once we have the serialized list of users.*/
+    /**
+     * Registers the user in the """"""database"""""" and redirects to the main activity.
+     * @param name Username to register
+     * @param email Email to register
+     * @param password Password to register
+     */
     private void register(String name, String email, String password) {
+        //Toasts for feedback, because we want the user to feel special :)
+        Toast success = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
+        Toast fail = Toast.makeText(getApplicationContext(), "Hm... It seems this email already exists!", Toast.LENGTH_SHORT);
+
+        if(PlayerManager.insertPlayer(new Player(name, email, password))) {
+            success.show();
+            goToMainActivity();
+        } else {
+            fail.show();
+        }
+    }
+
+    /**
+     * Redirects to main activity
+     */
+    private void goToMainActivity() {
         Intent changeScreen = new Intent(this, MainActivity.class);
         startActivity(changeScreen);
     }
 
+    /**
+     * Redirects to login activity
+     */
     private void goToLogin() {
         Intent changeScreen = new Intent(this, LoginActivity.class);
         startActivity(changeScreen);
