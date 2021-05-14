@@ -5,4 +5,6 @@ public class InterestPoint {
     public String name;
     public GeoCoordinates geoCoordinates;
     public String imageFile;
+    public String learnMore;
+    public QuestionData[] quizz;
 }

@@ -106,12 +106,11 @@
 
             <Button
                 android:id="@+id/button_optionA"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:text="Opção A"
-                android:textColor="@color/white"
-                app:backgroundTint="#81D4FA" />
+                android:textColor="@color/white" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -120,12 +119,11 @@
 
             <Button
                 android:id="@+id/button_optionB"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:text="Opção B"
-                android:textColor="@color/white"
-                app:backgroundTint="#81D4FA" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,12 +135,11 @@
 
             <Button
                 android:id="@+id/button_optionC"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:text="Opção C"
-                android:textColor="@color/white"
-                app:backgroundTint="#81D4FA" />
+                android:textColor="@color/white" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -151,12 +148,11 @@
 
             <Button
                 android:id="@+id/button_optionD"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:text="Opção D"
-                android:textColor="@color/white"
-                app:backgroundTint="#81D4FA" />
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 

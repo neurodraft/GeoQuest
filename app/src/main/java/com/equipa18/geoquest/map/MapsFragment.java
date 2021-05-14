@@ -456,7 +456,7 @@ public class MapsFragment extends Fragment {
                 }
             }
 
-            ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered();
+            ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered(unlockedPoints);
         }
     }
 

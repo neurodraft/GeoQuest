@@ -35,4 +35,8 @@ public class QuizzQuestion {
     public List<QuizzAnswer> getOptions() {
         return options;
     }
+
+    public boolean isAnswerCorrect(int i) {
+        return options.get(i) == correctAnswer;
+    }
 }

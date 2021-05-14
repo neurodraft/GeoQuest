@@ -17,6 +17,8 @@ import com.equipa18.geoquest.world.InterestPoint;
 import com.equipa18.geoquest.R;
 import com.equipa18.geoquest.player.PlayerManager;
 
+import java.util.List;
+
 public class InterestPointFragment extends Fragment {
 
     private ImageView headerIcon;
@@ -61,8 +63,14 @@ public class InterestPointFragment extends Fragment {
     }
 
 
-    public void wasConquered() {
+    public void wasConquered(List<InterestPoint> unlockedPoints) {
         headerIcon.setImageResource(R.drawable.ic_baseline_flag_48);
         headerIcon.setColorFilter(Color.GREEN);
+        getParentFragmentManager().popBackStack();
+        getParentFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.card_content, new ConqueredFragment(interestPoint, unlockedPoints))
+                .addToBackStack(null)
+                .commit();
     }
 }

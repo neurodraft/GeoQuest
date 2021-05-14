@@ -22,4 +22,11 @@ public class Quizz {
         }
         return questions.get(++currentQuestion);
     }
+
+    public QuizzQuestion getCurrentQuestion(){
+        if(currentQuestion == -1 || currentQuestion >= questions.size()){
+            return null;
+        }
+        return questions.get(currentQuestion);
+    }
 }

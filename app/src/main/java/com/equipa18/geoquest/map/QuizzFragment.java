@@ -3,6 +3,7 @@ package com.equipa18.geoquest.map;
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -24,9 +25,11 @@ import com.equipa18.geoquest.world.Quizz;
 import com.equipa18.geoquest.world.QuizzAnswer;
 import com.equipa18.geoquest.world.QuizzQuestion;
 import com.equipa18.geoquest.world.WorldManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class QuizzFragment extends Fragment {
 
@@ -42,6 +45,8 @@ public class QuizzFragment extends Fragment {
 
     private TextView questionText;
     private TextView questionTitle;
+    private int score;
+    private Button buttonHelp;
 
 /*
     public static QuizzFragment newInstance() {
@@ -54,25 +59,35 @@ public class QuizzFragment extends Fragment {
         this.interestPoint = interestPoint;
 
         this.quizz = WorldManager.getNewQuizz(interestPoint);
+
+        score = 0;
     }
 
     private void showNextQuestion(){
         QuizzQuestion question = quizz.getNextQuestion();
 
         if(question == null){
-            MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
-            mapsFragment.conqueredCurrentPoint();
-            getParentFragmentManager().popBackStack();
+            if(score > 0){
+                MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
+                mapsFragment.conqueredCurrentPoint();
+            } else {
+                getParentFragmentManager().popBackStack();
+            }
             return;
         }
         questionTitle.setText(question.getQuestionTitle());
 
         questionText.setText(question.getQuestionText());
 
-        int i = 0;
-        for(QuizzAnswer answer : question.getOptions()){
-            optionButtons.get(i).setText(answer.getAnswerText());
-            i++;
+        buttonHelp.setEnabled(true);
+
+        List<QuizzAnswer> options = question.getOptions();
+        for(int i = 0; i < options.size(); i++){
+            Button optionButton = optionButtons.get(i);
+            optionButton.setEnabled(true);
+            optionButton.setText(options.get(i).getAnswerText());
+
+
         }
 
         resetCountDown();
@@ -93,6 +108,8 @@ public class QuizzFragment extends Fragment {
         questionTitle = view.findViewById(R.id.question_title);
 
         questionText = view.findViewById(R.id.question_text);
+
+        buttonHelp = view.findViewById(R.id.button_help);
 
 
         setActions(view);
@@ -126,14 +143,59 @@ public class QuizzFragment extends Fragment {
 
         buttonGiveUp.setOnClickListener(v -> getParentFragmentManager().popBackStack());
 
-        for(Button optionButton : optionButtons){
+
+        for(int i = 0; i < optionButtons.size(); i++){
+            Button optionButton = optionButtons.get(i);
+            int finalI = i;
             optionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showNextQuestion();
+                    pressedOption(finalI);
                 }
             });
         }
+
+        buttonHelp.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.R)
+            @Override
+            public void onClick(View v) {
+                Random r = new Random();
+                List<Integer> ordered = new ArrayList<>(List.of(0,1,2,3));
+
+                int removedButtons = 0;
+
+                while(removedButtons < 2){
+                    int index = r.nextInt(ordered.size());
+                    Integer value = ordered.get(index);
+
+                    if(quizz.getCurrentQuestion().isAnswerCorrect(value)){
+                        ordered.remove(index);
+                    } else {
+                        optionButtons.get(value).setEnabled(false);
+                        ordered.remove(index);
+
+                        removedButtons++;
+                    }
+                }
+                buttonHelp.setEnabled(false);
+
+            }
+        });
+
+    }
+
+    private void pressedOption(int i) {
+        QuizzQuestion question = quizz.getCurrentQuestion();
+
+
+        if(question.isAnswerCorrect(i)){
+            Snackbar.make(getView(), "Resposta Correcta!", Snackbar.LENGTH_LONG).show();
+            score += 1;
+        } else{
+            Snackbar.make(getView(), "Resposta Incorrecta...", Snackbar.LENGTH_LONG).show();
+            score -= 1;
+        }
+        showNextQuestion();
     }
 
     private void resetCountDown(){
