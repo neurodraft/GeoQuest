@@ -7,22 +7,32 @@
       "longitude": -8.896749
     },
     "imageFile": "450px-Pelourinho_Setubal01.jpg",
-    "learnmore": "",
+    "learnmore": "O Pelourinho de Setúbal, construído em 1774, está localizado na Praça Marquês de Pombal (antiga Praça de São Pedro), na cidade de Setúbal, na freguesia de Nossa Senhora da Anunciada.\nA sua coluna de mármore branco possui um capitel do tipo coríntio.\nEstá classificado pelo IGESPAR como monumento nacional desde 1910. \n",
     "quizz": [
       {
-        "question": "",
-        "answer": "",
-        "category": ""
+        "question": "Onde se localiza o Pelourinho de Setúbal?",
+        "answer": "Praça Marquês de Pombal",
+        "category": "0"
       },
       {
-        "question": "",
-        "answer": "",
-        "category": ""
+        "question": "De que material é feito o Pelourinho?",
+        "answer": "Mármore branco",
+        "category": "3"
       },
       {
-        "question": "",
-        "answer": "",
-        "category": ""
+        "question": "Quando é que o Pelourinho passou a ser considerado monumento nacional",
+        "answer": "1910",
+        "category": "2"
+      },
+      {
+        "question": "Em que século foi construído?",
+        "answer": "XVIII",
+        "category": "2"
+      },
+      {
+        "question": "Em que freguesia se localiza o Pelourinho?",
+        "answer": "Nossa Senhora da Anunciada",
+        "category": "0"
       }
     ]
   },
@@ -33,7 +43,35 @@
       "latitude": 38.517715,
       "longitude": -8.909221
     },
-    "imageFile": "640px-Fortaleza_de_S.Filipe.jpg"
+    "imageFile": "640px-Fortaleza_de_S.Filipe.jpg",
+    "learnmore": "O Castelo de São Filipe, também conhecido como Forte de São Filipe e Fortaleza de São Filipe, é uma fortificação militar de estilo maneirista localizada em Setúbal, inaugurada em 1582 e classificada como Monumento Nacional desde 1933, localiza-se no Parque Natural da Arrábida. Encontra-se em posição dominante sobre um outeiro, fronteiro à cidade litorânea de Setúbal, dominando a margem esquerda da foz do rio Sado e o oceano Atlântico, em Portugal.",
+    "quizz": [
+      {
+        "question": "Onde fica localizado o Castelo de São Filipe?",
+        "answer": "Parque Natural da Arrábida",
+        "category": "0"
+      },
+      {
+        "question": "Como é também conhecido o Castelo de São Filipe?",
+        "answer": "Fortaleza de São Filipe",
+        "category": "1"
+      },
+      {
+        "question": "Qual era a utilização do castelo após a sua construção?",
+        "answer": "Militar",
+        "category": "5"
+      },
+      {
+        "question": "Quando foi inaugurado o Castelo de São Filipe?",
+        "answer": "1582",
+        "category": "3"
+      },
+      {
+        "question": "Qual o estilo de arquitetura do Castelo de São Filipe?",
+        "answer": "Estilo Maneirista",
+        "category": "3"
+      }
+    ]
   },
   {
     "id": 3,
@@ -42,7 +80,35 @@
       "latitude": 38.52434441,
       "longitude": -8.89954802
     },
-    "imageFile": "800px-Feu_Guiao2646.jpg"
+    "imageFile": "800px-Feu_Guiao2646.jpg",
+    "learnmore": "Situado na zona do Bairro de Troino, na freguesia da Nossa Senhora da Anunciada , em Setúbal. É um palacete, construído em meados do séc. XVIII, com enorme simplicidade arquitetónica, com alguns motivos de ligeira magnificência, tais como o brasão da família e quatro gárgulas. A sua grandeza serve de contraste aos pequenos edifícios contíguos, com menores dimensões e humildade.\nJulga-se que o nome terá surgido do mandante da obra, José da Rosa Guião e Abreu, que na época, era um afamado desembargador, em plena ascensão social. A outra designação, a do Palácio do Adeantado, atribui-se também ao facto de José da Rosa desempenhar, simultaneamente, funções de Adeantado do Reino.\nO edifício manteve-se nas mãos da família Feu Guião até ao ano de 1881, pois nesse mesmo ano foi arrematado em hasta pública por Manuel Maria Valente.\nApós servir de residência durante quase dois séculos, o edifício é ocupado por diversas instituições, entre as quais uma escola primária. Mas, aquando do terramoto de 1969, que afetou toda a zona da cidade de Setúbal, o palácio foi atingido e, com o passar dos anos, foi-se degradando e atualmente, encontra-se num estado de degradação inacreditável, sendo esta uma edificação de grande magnitude que se destaca claramente de tudo o resto que o circunda. \n",
+    "quizz": [
+      {
+        "question": "Em que século foi construído o Palacete da Família Feu Guião?",
+        "answer": "XVIII",
+        "category": "2"
+      },
+      {
+        "question": "O Palacete da Família Feu Guião também é conhecido como...",
+        "answer": "Palácio do Adeantado",
+        "category": "1"
+      },
+      {
+        "question": "Quantas gárgulas contém o Palacete da Família Feu Guião?",
+        "answer": "4",
+        "category": "3"
+      },
+      {
+        "question": "Até que ano pertenceu o palácio à familia Feu Guião?",
+        "answer": "1881",
+        "category": "2"
+      },
+      {
+        "question": "Que acontecimento acelerou a deterioração do palácio?",
+        "answer": "Terramoto",
+        "category": "4"
+      }
+    ]
   },
   {
     "id": 4,
@@ -51,7 +117,35 @@
       "latitude": 38.5214558,
       "longitude": -8.94837671
     },
-    "imageFile": "799px-Quinta_do_Esteval_II.jpg"
+    "imageFile": "799px-Quinta_do_Esteval_II.jpg",
+    "learnmore": "A Quinta do Esteval, localizada na estrada nacional N10 a 6km da praia de Albarquel, é atualmente mais conhecida atualmente pelo Hotel Casa Palmela (que ocupa a sua mansão construída no século XVII) e pelas vinhas que o rodeiam.",
+    "quizz": [
+      {
+        "question": "Que Hotel se encontra na Quinta do Esteval?",
+        "answer": "Hotel Casa Palmela",
+        "category": "1"
+      },
+      {
+        "question": "Que fruto é típico da Quinta do Esteval?",
+        "answer": "Uva",
+        "category": "1"
+      },
+      {
+        "question": "Em que século foi construída a mansão da Quinta do Esteval?",
+        "answer": "XVII",
+        "category": "2"
+      },
+      {
+        "question": "A quantos quilómetros fica a Quinta do Esteval da praia?",
+        "answer": "6",
+        "category": "0"
+      },
+      {
+        "question": "Onde se localiza a Quinta do Esteval",
+        "answer": "Estrada Nacional N10",
+        "category": "0"
+      }
+    ]
   },
   {
     "id": 5,
@@ -60,7 +154,35 @@
       "latitude": 38.52438078,
       "longitude": -8.89536291
     },
-    "imageFile": "640px-Casa_quatro_cabecas_01.jpg"
+    "imageFile": "640px-Casa_quatro_cabecas_01.jpg",
+    "learnmore": "Casa das Quatro Cabeças é uma casa situada no bairro de Troino, em Setúbal, na esquina da Rua Direita de Troino (atual Rua Fran Pacheco) n.º 44 com a Travessa do Carmo n.º 29.\n\nNa porta principal, a da Rua Fran Paxeco, o lintel tem uma inscrição em latim (Si Deus pro nobis, quis contra nos) e, a meio, um busto, que se afirma representar o homem que impediu os conspiradores de terem sucesso na sua missão.\nNo cunhal da casa, um novo busto, que se afirma representar D. João II.\n",
+    "quizz": [
+      {
+        "question": "Na parte superior da porta principal existe uma frase, que está escrita em...",
+        "answer": "Latim",
+        "category": "3"
+      },
+      {
+        "question": "Onde se localiza a Casa das Quatro Cabeças?",
+        "answer": "Bairro do Troino",
+        "category": "0"
+      },
+      {
+        "question": "Quantas cabeças tem a casa?",
+        "answer": "4",
+        "category": "3"
+      },
+      {
+        "question": "O que representa o busto da Casa das Quatro Cabeças",
+        "answer": "O homem que impediu os conspiradores de terem sucesso na sua missão",
+        "category": "3"
+      },
+      {
+        "question": "O novo busto da casa representa...",
+        "answer": "D. João II",
+        "category": "1"
+      }
+    ]
   },
   {
     "id": 6,
@@ -69,7 +191,35 @@
       "latitude": 38.523893,
       "longitude": -8.896782
     },
-    "imageFile": "800px-Chafariz_Sapal01.jpg"
+    "imageFile": "800px-Chafariz_Sapal01.jpg",
+    "learnmore": "O Chafariz da Praça Teófilo Braga, de seu nome inicial Chafariz do Sapal, foi mandado construir em 1697 (segundo inscrição na zona posterior), pela Câmara de Setúbal na Praça do Sapal, atual Praça de Bocage, onde permaneceu até 1937.\nA água que vinha dar a este chafariz, era oriunda de uma nascente localizada na Arca d'Água, em Alferrara, a cerca de 3 km da Praça do Bocage, e era conduzida pelo Aqueduto dos Arcos.\nMais tarde, no século XX, o chafariz foi desmontado e instalado na Praça Teófilo Braga, onde está atualmente, desempenhando funções meramente estéticas.\nNeste monumento, encontra-se o escudo português encimado por coroa, sustentado por dois anjos.\n",
+    "quizz": [
+      {
+        "question": "Em que ano foi mandado construir o Chafariz da Praça Teófilo Braga?",
+        "answer": "1697",
+        "category": "2"
+      },
+      {
+        "question": "Onde tinha origem a água deste chafariz?",
+        "answer": "Arca d'Água",
+        "category": "0"
+      },
+      {
+        "question": "Por onde passava a água do Chafariz da Praça Teófilo Braga?",
+        "answer": "Aqueduto dos Arcos",
+        "category": "1"
+      },
+      {
+        "question": "Em que ano foi mudado, o chafariz, da Praça do Bocage para a Praça Teófilo de Braga?",
+        "answer": "1937",
+        "category": "2"
+      },
+      {
+        "question": "O escudo português é sustentado por quantos anjos?",
+        "answer": "2",
+        "category": "3"
+      }
+    ]
   },
   {
     "id": 7,
@@ -78,7 +228,40 @@
       "latitude": 38.488853,
       "longitude": -8.93414
     },
-    "imageFile": "800px-Forte_Outão_01.jpg"
+    "imageFile": "800px-Forte_Outão_01.jpg",
+    "learnmore": "O Forte de Santiago do Outão também referido apenas como Forte do Outão, localiza-se na barra norte do rio Sado, no Concelho e Distrito de Setúbal, em Portugal. Foi construído a mando de D. Sebastião de acordo com os estilos Gótico e Maneirista. Integrou, no passado, a linha defensiva do trecho do litoral denominado hoje, em termos de turismo, como Costa Azul, e que, no século XVII, se estendia de Albarquel a Sesimbra, complementando a defesa da importante povoação marítima de Setúbal.",
+    "quizz": [
+      {
+        "question": "Onde se localiza o Forte de Santiago do Outão?",
+        "answer": "Barra Norte do rio Sado",
+        "category": "0"
+      },
+      {
+        "question": "Em que ano foi construído o Forte de Santiago do Outão?",
+        "answer": "1572",
+        "category": "2"
+      },
+      {
+        "question": "Quem construiu o Forte de Santiago do Outão?",
+        "answer": "D. Sebastião",
+        "category": "1"
+      },
+      {
+        "question": "Qual foi o objetivo da sua construção?",
+        "answer": "Defesa da povoação marítima de Setúbal",
+        "category": "5"
+      },
+      {
+        "question": "Que estilos foram utilizados na sua construção?",
+        "answer": "Gótico e Maneirista",
+        "category": "3"
+      },
+      {
+        "question": "Que nome se dá, atualmente, ao forte?",
+        "answer": "Costa Azul",
+        "category": "1"
+      }
+    ]
   },
   {
     "id": 8,
@@ -87,7 +270,35 @@
       "latitude": 38.5259394,
       "longitude": -8.88699672
     },
-    "imageFile": "Portal_da_Gafaria_em_Setúbal.jpg"
+    "imageFile": "Portal_da_Gafaria_em_Setúbal.jpg",
+    "learnmore": "Local medieval para recolher os leprosos. Constituído por duas ombreiras e verga da porta (vestígio raro) com cinco arcos gravados, em que o central mostra um escudo. Na parte superior tem a seguinte inscrição em latim: \"Vanitas vanitatum, et omnia vanitas\" (vaidade das vaidades, é tudo vaidade). Finais do séc. XV ou inícios do séc. XVI.",
+    "quizz": [
+      {
+        "question": "No Portal da Gafaria existe uma frase, que está escrita em...",
+        "answer": "Latim",
+        "category": "3"
+      },
+      {
+        "question": "'Vanitas vanitatum, et omnia vanitas' significa...",
+        "answer": "Vaidade das vaidades, é tudo vaidade",
+        "category": "3"
+      },
+      {
+        "question": "Em que século foi construído o Portal da Gafaria?",
+        "answer": "Início do século XVI",
+        "category": "2"
+      },
+      {
+        "question": "Para que foi construído o Portal da Gafaria?",
+        "answer": "Recolher leprosos",
+        "category": "5"
+      },
+      {
+        "question": "Quantas ombreiras constituem o Portal da Gafaria?",
+        "answer": "2",
+        "category": "3"
+      }
+    ]
   },
   {
     "id": 9,
@@ -96,7 +307,35 @@
       "latitude": 38.524411,
       "longitude": -8.888055
     },
-    "imageFile": "Santa_Maria_da_Graca_Church.jpg"
+    "imageFile": "Santa_Maria_da_Graca_Church.jpg",
+    "learnmore": "A Igreja de Santa Maria da Graça ou Sé de Setúbal, matriz de Setúbal, com arquitetura original de António Rodrigues, situa-se no coração do primitivo burgo medieval setubalense, tendo sido em torno desta que se desenvolveu o mais importante bairro medieval da cidade, assim como o centro religioso e político-administrativo.[1]\nFundada no século XIII, originalmente de estilo barroco e maneirista, o atual edifício é uma reconstrução do alto renascimento com uma imponente fachada maneirista. \nDuas torres, altas e robustas, ladeiam a fachada imponente, com entrada num portal serliano. Dentro da igreja destacam-se as colunas da ordem toscana, com frescos de finais do século XVIII, o tecto da segunda metade do século XVIII, os altares colaterais, a talha dourada da capela-mor e os azulejos do final do mesmo século.\nNuma rua lateral, junto ao Terreiro de Santa Maria, encontra-se o pórtico gótico de uma antiga hospedaria – o Hospital de João Palmeiro.\n",
+    "quizz": [
+      {
+        "question": "Em que século foi fundada a Igreja de Santa Maria da Graça?",
+        "answer": "XIII",
+        "category": "2"
+      },
+      {
+        "question": "Que arquiteto desenhou a Igreja de Santa Maria da Graça?",
+        "answer": "António Rodrigues",
+        "category": "1"
+      },
+      {
+        "question": "Onde se situa a Igreja de Santa Maria da Graça?",
+        "answer": "Coração do primitivo burgo medieval setubalense",
+        "category": "0"
+      },
+      {
+        "question": "Que estilos definem a arquitetura da Igreja de Santa Maria da Graça?",
+        "answer": "Estilo Barroco e Maneirista",
+        "category": "3"
+      },
+      {
+        "question": "Dentro da igreja destacam-se as colunas da ordem toscana, com frescos de finais do século...",
+        "answer": "XVIII",
+        "category": "2"
+      }
+    ]
   },
   {
     "id": 10,
@@ -105,7 +344,35 @@
       "latitude": 38.524517,
       "longitude": -8.893101
     },
-    "imageFile": "400px-Jesus_Convent_5.jpg"
+    "imageFile": "400px-Jesus_Convent_5.jpg",
+    "learnmore": "O Cruzeiro de Setúbal ou Cruzeiro do Largo de Jesus encontra-se implantado no Largo de Jesus em frente à Igreja do antigo Mosteiro de Jesus,\nO cruzeiro, construído em brecha da Arrábida, assenta sobre um soco octogonal e é constituído por uma base com quatro ordens de degraus circulares sobre a qual assenta uma coluna com base e capitel oitavados, encimada por uma cruz. Os degraus são recortados em forma de pétalas de rosa.\nO cruzeiro, que foi mandado erguer por D. Jorge de Lencastre, filho bastardo de D. João II, encontra-se atualmente colocado a nascente da praça. Foi classificado como monumento nacional por decreto de 23 de junho de 1910. Foi, mais tarde, restaurado em 1985.\n",
+    "quizz": [
+      {
+        "question": "Onde foi implantado o Cruzeiro de Setúbal?",
+        "answer": "Largo de Jesus",
+        "category": "0"
+      },
+      {
+        "question": "Quem mandou erguer o Cruzeiro de Setúbal?",
+        "answer": "D. Jorge de Lencastre",
+        "category": "1"
+      },
+      {
+        "question": "Em que ano foi classificado como monumento nacional?",
+        "answer": "1910",
+        "category": "2"
+      },
+      {
+        "question": "Os degraus do Cruzeiro de Setúbal são recortados em forma de...",
+        "answer": "Pétalas de rosa",
+        "category": "3"
+      },
+      {
+        "question": "Em que ano foi restaurado o Cruzeiro de Setúbal?",
+        "answer": "1985",
+        "category": "2"
+      }
+    ]
   },
   {
     "id": 11,
@@ -114,7 +381,35 @@
       "latitude": 38.526147,
       "longitude": -8.894908
     },
-    "imageFile": "Jesus_Convent_1.jpg"
+    "imageFile": "Jesus_Convent_1.jpg",
+    "learnmore": "O Convento de Jesus de Setúbal foi fundado em 1489 por Justa Rodrigues Pereira, fidalga da casa dos duques de Beja e ama de D. Manuel I. \nO Convento de Jesus foi um convento feminino português das freiras da Ordem das Clarissas localizado em Setúbal e ainda hoje continua as suas funções religiosas, sendo que, atualmente, também serve de museu.\nO Convento de Jesus encontra-se classificado como monumento nacional desde 1910 e em 2011 como Marca do Património Europeu da Comissão Europeia e é considerado propriedade do Estado Português.\n",
+    "quizz": [
+      {
+        "question": "Em que ano foi fundado o Convento de Jesus de Setúbal?",
+        "answer": "1489",
+        "category": "2"
+      },
+      {
+        "question": "Por quem foi fundado o Convento de Jesus de Setúbal?",
+        "answer": "Justa Rodrigues Pereira",
+        "category": "1"
+      },
+      {
+        "question": "Qual era a ordem do convento?",
+        "answer": "Ordem das Clarissas",
+        "category": "1"
+      },
+      {
+        "question": "Qual o proprietário atual do Convento de Jesus de Setúbal?",
+        "answer": "Estado Português",
+        "category": "1"
+      },
+      {
+        "question": "Qual é a função atual do convento?",
+        "answer": "Igreja e meseu",
+        "category": "5"
+      }
+    ]
   },
   {
     "id": 12,
@@ -123,7 +418,35 @@
       "latitude": 38.5239,
       "longitude": -8.892417
     },
-    "imageFile": "Church_in_Praca_do_Bocage.jpg"
+    "imageFile": "Church_in_Praca_do_Bocage.jpg",
+    "learnmore": "A Igreja de São Julião fica situada em Setúbal, na Praça de Bocage.\nA fundação da Igreja de São Julião teve lugar em data incerta da segunda metade do século XIII. Em 1513, D. Manuel I ordenou a sua reconstrução. A obra decorreu entre 1516 e 1520, sendo o traçado da igreja atribuído a João de Castilho e a direção da obra ao mestre pedreiro João Favacho. Em 1570 volta a ser objeto de uma reedificação devido para reparação dos danos provocados pelo terramoto de 1531. O terramoto de 1755 volta a danificá-la seriamente, sendo objeto de uma nova reconstrução no final do século XVIII.\nAs paredes das naves, da capela-mor e da capela do Senhor dos Passos estão revestidas com painéis de azulejos recortados, com cercadura rococó polícroma e rodapé marmoreado.\nOs azulejos datam de cerca de 1790.\nOs painéis das naves têm como tema passos da vida de São Julião e de Santa Basilissa.\n",
+    "quizz": [
+      {
+        "question": "Em que século foi fundada a Igreja de São Julião?",
+        "answer": "XIII",
+        "category": "2"
+      },
+      {
+        "question": "Quem ordenou a sua primeira reconstrução?",
+        "answer": "D. Manuel I",
+        "category": "1"
+      },
+      {
+        "question": "Onde se localiza a Igreja de São Julião?",
+        "answer": "Praça do Bocage",
+        "category": "0"
+      },
+      {
+        "question": "Que estilo de arquitetura foi utilizado na sua reconstrução?",
+        "answer": "Estilo Manuelino",
+        "category": "3"
+      },
+      {
+        "question": "Os azuelajos da Igreja de São Julião são de finais do século...",
+        "answer": "XVIII",
+        "category": "2"
+      }
+    ]
   },
   {
     "id": 13,
@@ -132,7 +455,35 @@
       "latitude": 38.530435,
       "longitude": -8.89624
     },
-    "imageFile": "800px-Setubal_aqueduto_02.jpg"
+    "imageFile": "800px-Setubal_aqueduto_02.jpg",
+    "learnmore": "O Aqueduto de Setúbal, ou Aqueduto dos Arcos é um aqueduto que tinha o seu início na Arca d'Água (Alferrara), e terminava no centro da cidade de Setúbal.\nConstruído no final do século XV, no reinado de D. João II, prolongava-se por vários quilómetros, desde a nascente, até às muralhas da cidade com o propósito de abastecer de água a Vila de Setúbal.\nEm 1693, foi construído o Chafariz do Sapal em frente ao edifício dos Paços do Concelho de Setúbal. \nO abastecimento de água à cidade deixou, entretanto, de depender deste aqueduto.\nA expansão urbanística da cidade reduziu os vestígios do aqueduto a alguns troços, um dos quais se localiza no centro da cidade, no local do antigo campo de futebol do Vitória de Setúbal, na (Estrada dos Arcos).\nO aqueduto foi declarado Imóvel de Interesse Público pelo Decreto n.º 516/71, de 22 de novembro de 1971. \n",
+    "quizz": [
+      {
+        "question": "Em que século foi construído o Aqueduto de Setúbal?",
+        "answer": "XV",
+        "category": "2"
+      },
+      {
+        "question": "Em que ano foi declarado Imóvel de Interesse Público?",
+        "answer": "1971",
+        "category": "2"
+      },
+      {
+        "question": "Que objetivo teve a sua construção?",
+        "answer": "Abastecer água à vila de Setúbal",
+        "category": "5"
+      },
+      {
+        "question": "Onde terminava o Aqueduto de Setúbal?",
+        "answer": "Centro de Setúbal",
+        "category": "0"
+      },
+      {
+        "question": "Quem ordenou a construção do aqueduto?",
+        "answer": "D. João II",
+        "category": "1"
+      }
+    ]
   },
   {
     "id": 14,
@@ -141,7 +492,35 @@
       "latitude": 38.523534,
       "longitude": -8.890289
     },
-    "imageFile": "450px-Fábrica_romana_de_Salga_05.jpg"
+    "imageFile": "450px-Fábrica_romana_de_Salga_05.jpg",
+    "learnmore": "A Fábrica Romana de Salga situa-se na Travessa de Frei Gaspar, no centro da cidade de Setúbal, no subsolo de um edifício onde se encontravam instalados serviços da Região de Turismo da Costa Azul. Esta unidade industrial romana, composta por catorze cetárias, foi descoberta em 1979, aquando de obras efectuadas nesse mesmo local.\n Esta unidade dedicava-se à salga de peixe e pequenos crustáceos, com os quais se preparavam vários alimentos e condimentos, destacando-se o garo. Corresponde a um período de ocupação que vai do século I ao V/VI. A fábrica foi posteriormente abandonada, devido à decadência dos mercados romanos.\n",
+    "quizz": [
+      {
+        "question": "Onde se situa a Fábrica romana de Salga?",
+        "answer": "Travessa de Frei Gaspar",
+        "category": "0"
+      },
+      {
+        "question": "Por quantas cetárias é constituida a fábrica?",
+        "answer": "14",
+        "category": "3"
+      },
+      {
+        "question": "Em que ano foi descoberta a Fábrica romana de Salga?",
+        "answer": "1969",
+        "category": "2"
+      },
+      {
+        "question": "Qual foi o objetivo da sua construção?",
+        "answer": "Salga de peixe e pequenos crustáceos",
+        "category": "5"
+      },
+      {
+        "question": "Porque foi abandonada?",
+        "answer": "Decadência dos mercados romanos",
+        "category": "4"
+      }
+    ]
   },
   {
     "id": 15,
@@ -150,7 +529,35 @@
       "latitude": 38.51723055,
       "longitude": -9.03317686
     },
-    "imageFile": "450px-Fontanário_em_Vila_Nigueira_de_Azeitão.jpg"
+    "imageFile": "450px-Fontanário_em_Vila_Nigueira_de_Azeitão.jpg",
+    "learnmore": "Fontanário em Vila Nogueira de Azeitão ou Chafariz dos Pasmados é um fontanário em Azeitão, Portugal. Foi projetado seguindo regras de um barroco tardio, entre os anos de 1764 e 1777. \nÉ também designado por \"Chafariz dos Pasmados\". Tem o seu volume dividido em três partes por duas pilastras, localizando-se as três bicas na parte central que é encimada por um frontão.\nDiz uma lenda que quem beber desta água ficará ligado a Azeitão para sempre.\n",
+    "quizz": [
+      {
+        "question": "Que nome alternativo se dá ao Fontanário em Vila Nogueira de Azeitão?",
+        "answer": "Chafariz dos Pasmados",
+        "category": "1"
+      },
+      {
+        "question": "Onde se situa o Fontanário em Vila Nogueira de Azeitão",
+        "answer": "Azeitão",
+        "category": "0"
+      },
+      {
+        "question": "Que estilo de arquitetura adotou?",
+        "answer": "Estilo Barroco",
+        "category": "3"
+      },
+      {
+        "question": "O seu volume está dividido em quantas partes?",
+        "answer": "3 partes por 2 pilastres",
+        "category": "3"
+      },
+      {
+        "question": "De acordo com a lenda, quem beber água deste fontanário...",
+        "answer": "Fica ligado a Azeitão para sempre",
+        "category": "4"
+      }
+    ]
   },
   {
     "id": 16,
@@ -159,7 +566,35 @@
       "latitude": 38.520108,
       "longitude": -9.006192
     },
-    "imageFile": "quinta das torres.jpg"
+    "imageFile": "quinta das torres.jpg",
+    "learnmore": "A Quinta das Torres e o seu Palácio, em Setúbal, datável de cerca de 1560, é um dos mais importantes e belos conjuntos arquitectónicos renascentistas do país.\nNo seu interior, quase todas as salas possuem tectos de madeira, portas à romana e painéis de azulejos na parede. Merece especial destaque um notável conjunto de azulejos em majólica com cenas da Eneida, provavelmente provenientes de Urbino (Itália). Junto ao edifício um pequeno lago em cujo centro se eleva um templete. Todo o conjunto é envolvido por arvoredo que cria um ambiente quase idílico.\nA casa apalaçada apresenta determinadas características que estão na origem da denominação Quinta das Torres: constitui um quadrilátero com um torreão em cada ângulo, centrado por um pátio a céu aberto, para onde deita um pórtico bem delineado, encimado por duas pirâmides cujas agulhas sobem acima do edifício. \nHoje funciona apenas como casa privada, dando espaço a eventos como casamentos, gravações de telenovelas (jardins proibidos)etc. No final de 2012, o vídeoclipe de 'El Beso', um dos temas do disco de Pablo Alborán, \"Tanto\", foi filmado na Quinta das Torres, em Azeitão. \nLocaliza-se na EN10, entre Vila Fresca e Vila Nogueira de Azeitão.\n",
+    "quizz": [
+      {
+        "question": "Qual o estilo que segue a arquitetura do Palácio da Quinta das Torres?",
+        "answer": "Estilo Renascentista",
+        "category": "3"
+      },
+      {
+        "question": "Onde se localiza o Palácio da Quinta das Torres?",
+        "answer": "Azeitão",
+        "category": "0"
+      },
+      {
+        "question": "Qual a sua função atual?",
+        "answer": "Casamentos e gravações de telenovelas",
+        "category": "5"
+      },
+      {
+        "question": "Em que século foi construído o Palácio da Quinta das Torres?",
+        "answer": "XVI",
+        "category": "2"
+      },
+      {
+        "question": "Quantos arcos estão presentes no seu pátio?",
+        "answer": "3",
+        "category": "3"
+      }
+    ]
   },
 
   {
@@ -169,7 +604,35 @@
       "latitude": 38.518488,
       "longitude": -9.012825
     },
-    "imageFile": "800px-Palácio_dos_Duques_de_Aveiro,_Vila_Nogueira_de_Azeitão_09.jpg"
+    "imageFile": "800px-Palácio_dos_Duques_de_Aveiro,_Vila_Nogueira_de_Azeitão_09.jpg",
+    "learnmore": "O palácio dos Duques de Aveiro localiza-se na freguesia de São Lourenço, concelho de Setúbal. O palácio dos Duques de Aveiro é um edifício majestoso do Renascentismo Clássico. Foi mandado construir por D. Jorge de Lancastre entre os anos de 1521/37.\nO seu destino ficou marcado no dia 12 de Janeiro de 1759 quando foi confiscado juntamente com todos os bens da família Távora que era proprietária do palácio nessa altura, tendo sido esta a única propriedade que foi poupada à demolição embora o brasão tivesse sido picado.\n",
+    "quizz": [
+      {
+        "question": "Onde se localiza o Palácio dos Duques de Aveiro?",
+        "answer": "Freguesia de São Lourenço",
+        "category": "0"
+      },
+      {
+        "question": "Quem ordenou a sua construção?",
+        "answer": "D. Jorge de Lencastre",
+        "category": "1"
+      },
+      {
+        "question": "Em que ano foi construído?",
+        "answer": "Entre 1521 e 1537",
+        "category": ""
+      },
+      {
+        "question": "Que estilo segue a sua arquitetura?",
+        "answer": "Renascentismo Clássico",
+        "category": "3"
+      },
+      {
+        "question": "O que aconteceu em 12 de Janeiro de 1759 no palácio?",
+        "answer": "Foi confiscado juntamente com todos os bens da familia Távora",
+        "category": "4"
+      }
+    ]
   },
   {
     "id": 18,
@@ -178,7 +641,35 @@
       "latitude": 38.518672,
       "longitude": -9.013756
     },
-    "imageFile": "407px-Pelourinho_de_Vila_Nogueira_de_Azeitão_-_Portugal_(33922519618).jpg"
+    "imageFile": "407px-Pelourinho_de_Vila_Nogueira_de_Azeitão_-_Portugal_(33922519618).jpg",
+    "learnmore": "O Pelourinho de Vila Nogueira de Azeitão situa-se em Vila Nogueira de Azeitão, concelho de Setúbal, e tem uma esfera armilar de ferro.\nEste pelourinho inicialmente estava em Vila Fresca de Azeitão quando o concelho de Azeitão foi criado, depois a sede do concelho mudou-se para Vila Nogueira de Azeitão e o pelourinho ficou em Vila Nogueira até aos dias de hoje.\nO pelourinho que podemos observar no Rossio da Vila (atual Praça da República) é uma reconstrução da segunda metade do século XX. Está classificado como Imóvel de Interesse Público desde 1933.\n",
+    "quizz": [
+      {
+        "question": "Onde se situa o Pelourinho de Vila Nogueira de Azeitão?",
+        "answer": "Vila Nogueira de Azeitão",
+        "category": "0"
+      },
+      {
+        "question": "O que se encontra no topo do pelourinho?",
+        "answer": "Esfera Armilar",
+        "category": "3"
+      },
+      {
+        "question": "Quando ocorreu a sua reconstrução?",
+        "answer": "Século XX",
+        "category": "2"
+      },
+      {
+        "question": "Quando foi classificado como Imóvel de Interesse Público?",
+        "answer": "1933",
+        "category": "2"
+      },
+      {
+        "question": "Quantos degraus tem o pelourinho?",
+        "answer": "4",
+        "category": "3"
+      }
+    ]
   },
   {
     "id": 19,
@@ -187,7 +678,35 @@
       "latitude": 38.473599,
       "longitude": -8.995253
     },
-    "imageFile": "800px-Convento_Arrábida.jpg"
+    "imageFile": "800px-Convento_Arrábida.jpg",
+    "learnmore": "O Convento da Nossa Senhora da Arrábida, que pertenceu à Província Franciscana de Arrábida, fica meio escondido entre as árvores da vertente sul da Serra da Arrábida, virada para o mar, no concelho de Setúbal. Esta construção do século XVI foi outrora um convento franciscano. Está hoje inclusa no Parque Natural da Arrábida.\nA fundação de um Convento na Serra da Arrábida data de fins de 1538-1539, quando Dom João de Lencastre 1º Duque de Aveiro prometeu a Frei Martinho (Martín de Santa Maria Benavides), um frade descalço andaluz da Ordem de São Francisco, cumprir o seu desejo de levar uma vida eremítica e dedicada exclusivamente a Nossa Senhora.\nEm 1650, D. Ana Manique de Lara, viúva do duque de Torres Novas e nora de D. Álvaro, mandou construir duas capelas.\nNeste Convento viveu Frei Agostinho da Cruz. \nPela sua importância e originalidade, o Convento da Arrábida foi, em 1977, classificado de interesse público.\n",
+    "quizz": [
+      {
+        "question": "Em que ano foi fundado o Convento de Nossa Senhora da Arrábida?",
+        "answer": "1538/39",
+        "category": "2"
+      },
+      {
+        "question": "Onde se situa o Convento de Nossa Senhora da Arrábida?",
+        "answer": "Vertente sul da Serra da Arrábida",
+        "category": "0"
+      },
+      {
+        "question": "Quem viveu no Convento de Nossa Senhora da Arrábida?",
+        "answer": "Frei Agustinho da Cruz",
+        "category": "1"
+      },
+      {
+        "question": "Em que ano foi considerado Interesse Público?",
+        "answer": "1977",
+        "category": "2"
+      },
+      {
+        "question": "Em 1650 quem mandou construir as duas capelas do Convento de Nossa Senhora da Arrábida?",
+        "answer": "D. Ana Manique de Lara ",
+        "category": "1"
+      }
+    ]
   },
   {
     "id": 20,
@@ -196,7 +715,35 @@
       "latitude": 38.518934,
       "longitude": -9.014487
     },
-    "imageFile": "800px-Igreja_de_São_Lourenço_-_Azeitão_-_Portugal_(32856016997).jpg"
+    "imageFile": "800px-Igreja_de_São_Lourenço_-_Azeitão_-_Portugal_(32856016997).jpg",
+    "learnmore": "A Igreja de São Lourenço, na Vila Nogueira de Azeitão, é um templo do séc. XVI, de exterior muito simples, exemplificativo de um estilo sóbrio frequente em ambiente rural. Ao longo dos séculos fizeram-se algumas alterações ao nível arquitetónico e decorativo, sobretudo depois do terramoto de 1755.\n\nO interior é revestido por painéis de azulejos do séc. XVIII, representando cenas religiosas do Velho Testamento. Destaca-se um dos painéis ainda datado do séc. XVI, provavelmente pertencente à decoração de origem. Nas paredes laterais, dois painéis com cenas da vida de São Lourenço, o orago da igreja, do séc. XVII.\n\nDe notar a decoração da capela-mor com o altar em mármore policromo, proveniente da Serra da Arrábida, e o retábulo de talha dourada do séc XVII, com uma tela representando a Última Ceia.\n",
+    "quizz": [
+      {
+        "question": "Onde se localiza a Igreja de São Lourenço?",
+        "answer": "Vila Nogueira de Azeitão",
+        "category": "0"
+      },
+      {
+        "question": "Em que século foi construída a Igreja de São Lourenço?",
+        "answer": "XVI",
+        "category": "2"
+      },
+      {
+        "question": "Quem pintou os azulejos da Igreja de São Lourenço?",
+        "answer": "António de Oliveira Bernardes",
+        "category": "1"
+      },
+      {
+        "question": "De que material é composto o altar da Igreja de São Lourenço?",
+        "answer": "Mármore Policromo",
+        "category": "3"
+      },
+      {
+        "question": "O que representa a tela no interior da Igreja de São Lourenço?",
+        "answer": "A ultima ceia",
+        "category": "3"
+      }
+    ]
   },
   {
     "id": 21,
@@ -205,7 +752,35 @@
       "latitude": 38.52386294,
       "longitude": -8.98968509
     },
-    "imageFile": "Quinta_da_Bacalhôa_(11199645583).jpg"
+    "imageFile": "Quinta_da_Bacalhôa_(11199645583).jpg",
+    "learnmore": "A Quinta da Bacalhoa é uma antiga propriedade da Casa Real Portuguesa. A quinta com o famoso Palácio da Bacalhoa - também conhecido como Palácio dos Albuquerques - situa-se na freguesia de Azeitão, Concelho de Setúbal, mais precisamente na pequena aldeia de Vila Fresca de Azeitão. É considerada a mais formosa quinta da primeira metade do século XVI, ainda existente em Portugal.\nEm 1936, o Palácio da Bacalhoa foi comprado e restaurado por uma norte-americana, Orlena Scoville, cujo neto se incumbiu da missão de tornar a quinta num dos maiores produtores de vinho de Portugal. Mais tarde o Palácio e a Quinta da Bacalhoa pertenceram a José António Borges.\nAtualmente a Quinta da Bacalhoa pertence à Fundação Berardo, liderada pela família Berardo, a nona mais rica de Portugal, cujo patriarca é o madeirense Joe Berardo.\n",
+    "quizz": [
+      {
+        "question": "Que outro nome se dá ao Palácio da Bacalhoa?",
+        "answer": "Palácio dos Albuquerques",
+        "category": "1"
+      },
+      {
+        "question": "Onde se situa o Palácio da Bacalhoa?",
+        "answer": "Aldeia de Vila Fresca de Azeitão",
+        "category": "0"
+      },
+      {
+        "question": "Em 1936 quem comprou e restaurou o Palácio da Bacalhoa?",
+        "answer": "Orlena Scoville",
+        "category": "1"
+      },
+      {
+        "question": "Qual foi o objetivo da sua restauração?",
+        "answer": "Para se tornar num dos maiores produtores de vinho de Portugal",
+        "category": "5"
+      },
+      {
+        "question": "Atualmente a que fundação pertence o Palácio da Bacalhoa?",
+        "answer": "Fundação Berardo",
+        "category": "1"
+      }
+    ]
   },
   {
     "id": 22,
@@ -214,6 +789,34 @@
       "latitude": 38.53287398,
       "longitude": -8.90110661
     },
-    "imageFile": "convento_de_brancanes.jpg"
+    "imageFile": "convento_de_brancanes.jpg",
+    "learnmore": "",
+    "quizz": [
+      {
+        "question": "Em que ano foi fundado o Convento de Brancanes?",
+        "answer": "1682",
+        "category": "2"
+      },
+      {
+        "question": "Qual foi a missão convento após a sua construção?",
+        "answer": "Formação de missionários",
+        "category": "5"
+      },
+      {
+        "question": "Qual foi a função do convento do século XX?",
+        "answer": "Quartel Militar e estabelicimento prisional",
+        "category": "5"
+      },
+      {
+        "question": "Quem fundou o Convento de Brancanes?",
+        "answer": "Frei António das Chagas",
+        "category": "1"
+      },
+      {
+        "question": "Qual o estilo de arquitetura do Convento de Brancanes?",
+        "answer": "Estilo Maneirista",
+        "category": "3"
+      }
+    ]
   }
 ]
