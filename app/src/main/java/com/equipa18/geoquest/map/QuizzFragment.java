@@ -70,6 +70,8 @@ public class QuizzFragment extends Fragment {
             if(score > 0){
                 MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
                 mapsFragment.conqueredCurrentPoint();
+            } else {
+                getParentFragmentManager().popBackStack();
             }
             return;
         }
