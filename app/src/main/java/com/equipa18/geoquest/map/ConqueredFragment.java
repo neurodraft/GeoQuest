@@ -1,66 +1,108 @@
 package com.equipa18.geoquest.map;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
 
 import com.equipa18.geoquest.R;
+import com.equipa18.geoquest.world.InterestPoint;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ConqueredFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+
 public class ConqueredFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private InterestPoint interestPoint;
+    private List<InterestPoint> unlockedPoints;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public ConqueredFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ConqueredFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ConqueredFragment newInstance(String param1, String param2) {
-        ConqueredFragment fragment = new ConqueredFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public ConqueredFragment(InterestPoint interestPoint, List<InterestPoint> unlockedPoints) {
+        this.interestPoint = interestPoint;
+        this.unlockedPoints = unlockedPoints;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_conquered, container, false);
+        View view = inflater.inflate(R.layout.fragment_conquered, container, false);
+
+        /*
+        try {
+            InputStream is = getContext().getAssets().open("images/" + interestPoint.imageFile);
+            Bitmap bmp = BitmapFactory.decodeStream(is);
+            ((ImageView)view.findViewById(R.id.interest_point_image)).setImageBitmap(bmp);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+         */
+
+        // Converts 14 dip into its equivalent px
+        float dip = 100f;
+        Resources r = getResources();
+        float px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dip,
+                r.getDisplayMetrics()
+        );
+
+        for(int i = 0; i < unlockedPoints.size(); i++){
+            InterestPoint unlockedPoint = unlockedPoints.get(i);
+            try {
+                InputStream is = getContext().getAssets().open("images/" + unlockedPoint.imageFile);
+                Bitmap bmp = BitmapFactory.decodeStream(is);
+                ImageView imageView = new ImageView(getContext());
+                imageView.setImageBitmap(bmp);
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams((int)px, ViewGroup.LayoutParams.MATCH_PARENT));
+                ((LinearLayout)view.findViewById(R.id.layout_unlocked)).addView(imageView);
+
+                if(i < unlockedPoints.size() - 1) {
+                    Space space = new Space(getContext());
+                    space.setLayoutParams(new LinearLayout.LayoutParams((int) px / 8, ViewGroup.LayoutParams.MATCH_PARENT));
+                    ((LinearLayout) view.findViewById(R.id.layout_unlocked)).addView(space);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        setActions(view);
+
+        return view;
+    }
+
+    private void setActions(View view) {
+        Button button_return = view.findViewById(R.id.button_return);
+
+        button_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().popBackStack();
+            }
+        });
     }
 }

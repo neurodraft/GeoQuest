@@ -38,11 +38,15 @@ public class WorldManager {
                     "<Texto da pergunta "+ (i+1) + " aqui>");
             int correctAnswerIndex = (int) Math.round((Math.random()*3.5)-0.5);
             for(int j = 0; j < 4; j++){
-                QuizzAnswer answer = new QuizzAnswer("Resposta "+ (i+1) + "-" + (j+1));
-                question.addAnswer(answer);
+                QuizzAnswer answer;
                 if(j == correctAnswerIndex){
+                    answer = new QuizzAnswer("Correcta "+ (i+1) + "-" + (j+1));
                     question.setCorrectAnswer(answer);
+                } else{
+                    answer = new QuizzAnswer("Incorrecta "+ (i+1) + "-" + (j+1));
                 }
+                question.addAnswer(answer);
+
             }
             quizz.addQuestion(question);
         }
