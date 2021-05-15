@@ -1,3 +1,4 @@
+
 package io.github.jdiemke.triangulation;
 
 import java.util.ArrayList;
