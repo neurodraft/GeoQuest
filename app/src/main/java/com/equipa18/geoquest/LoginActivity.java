@@ -43,16 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         PlayerManager.loadPlayers(getApplicationContext());
     }
 
-    /*the parameters are unused for now, they will be used to
-    verify the login once we have the serialized list of useres.*/
     private void login(String email, String password) {
-        //TODO: implement verification of password+email
         if(PlayerManager.login(email, password)){
             Intent changeScreen = new Intent(this, MainActivity.class);
             startActivity(changeScreen);
         }
-
-
     }
 
     private void register() {
