@@ -11,14 +11,57 @@ import java.util.Vector;
 
 public class Player {
     private boolean unitialized;
-
+    private String name;
+    private String email;
+    private String password;
     private Set<Integer> conqueredPoints;
     private Set<Integer> unlockedPoints;
 
     public Player() {
+        this("Default", "Default@Default.com", "default");
+    }
+
+    //Constructor for register
+    public Player(String name, String email, String password) {
         this.unitialized = true;
         conqueredPoints = new HashSet<>();
         unlockedPoints = new HashSet<>();
+        validatePlayerStrings(name, email, password);
+    }
+
+    private void validatePlayerStrings(String name, String email, String password) {
+        this.name = "Default";
+        this.email = "Default@Default.com";
+        this.password = "default";
+        if(checkString(name)) {
+            this.name = name;
+        }
+        if(checkString(email)) {
+            this.email = email;
+        }
+        if(checkString(password)) {
+            this.password = password;
+        }
+    }
+
+    private boolean checkString(String s) {
+        boolean valid = true;
+        if(s == null || s.isEmpty()) {
+            valid = false;
+        }
+        return valid;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUsername() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void unlockPoint(int interestPointId){
