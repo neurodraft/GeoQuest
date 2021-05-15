@@ -419,10 +419,10 @@ public class MapsFragment extends Fragment {
         });
     }
 
-    public void conqueredCurrentPoint() {
+    public void conqueredCurrentPoint(int score) {
         if(currentPoint != null){
             System.out.println("Conquered " + currentPoint.name);
-            PlayerManager.getCurrentPlayer().conquerPoint(currentPoint.id);
+            PlayerManager.getCurrentPlayer().conquerPoint(currentPoint.id, score);
 
             List<InterestPoint> unlockedPoints = new ArrayList<>();
 
@@ -433,16 +433,16 @@ public class MapsFragment extends Fragment {
                 } else {
                     other = edge.a;
                 }
-                System.out.println("\nConsidering " + other.name + "...");
+                //System.out.println("\nConsidering " + other.name + "...");
                 if(!PlayerManager.getCurrentPlayer().hasConquered(other.id)){
                     if(!PlayerManager.getCurrentPlayer().hasUnlocked(other.id)){
-                        System.out.println("Unlocked " + other.name);
+                        //System.out.println("Unlocked " + other.name);
                         unlockedPoints.add(other);
                         PlayerManager.getCurrentPlayer().unlockPoint(other.id);
                     }
                     edge.line.setColor(Color.RED);
                 } else{
-                    System.out.println("Connected " + currentPoint.name + " to " + other.name);
+                    //System.out.println("Connected " + currentPoint.name + " to " + other.name);
                     edge.line.setColor(Color.GREEN);
                 }
 
@@ -456,7 +456,7 @@ public class MapsFragment extends Fragment {
                 }
             }
 
-            ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered(unlockedPoints);
+            ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered(score, unlockedPoints);
         }
     }
 

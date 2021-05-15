@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.equipa18.geoquest.R;
+import com.equipa18.geoquest.player.PlayerManager;
 import com.equipa18.geoquest.world.InterestPoint;
 import com.equipa18.geoquest.world.Quizz;
 import com.equipa18.geoquest.world.QuizzAnswer;
@@ -42,18 +43,14 @@ public class QuizzFragment extends Fragment {
     private ProgressBar progressBar;
 
     private List<Button> optionButtons;
+    private List<TextView> optionTexts;
 
     private TextView questionText;
     private TextView questionTitle;
     private int score;
+    private int correctAnswers;
     private Button buttonHelp;
 
-/*
-    public static QuizzFragment newInstance() {
-        return new QuizzFragment();
-    }
-
- */
 
     public QuizzFragment(InterestPoint interestPoint) {
         this.interestPoint = interestPoint;
@@ -61,16 +58,19 @@ public class QuizzFragment extends Fragment {
         this.quizz = WorldManager.getNewQuizz(interestPoint);
 
         score = 0;
+        correctAnswers = 0;
     }
 
     private void showNextQuestion(){
         QuizzQuestion question = quizz.getNextQuestion();
 
         if(question == null){
-            if(score > 0){
+            if(correctAnswers >= 3){
+                System.out.println("Score = " + score);
                 MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
-                mapsFragment.conqueredCurrentPoint();
+                mapsFragment.conqueredCurrentPoint(score);
             } else {
+                PlayerManager.getCurrentPlayer().failedAttempt(interestPoint.id);
                 getParentFragmentManager().popBackStack();
             }
             return;
@@ -83,9 +83,31 @@ public class QuizzFragment extends Fragment {
 
         List<QuizzAnswer> options = question.getOptions();
         for(int i = 0; i < options.size(); i++){
+
             Button optionButton = optionButtons.get(i);
             optionButton.setEnabled(true);
-            optionButton.setText(options.get(i).getAnswerText());
+            //optionButton.setText(options.get(i).getAnswerText());
+
+            String letter = "";
+            switch(i){
+                case 0:
+                    letter = "A: ";
+                    break;
+                case 1:
+                    letter = "B: ";
+                    break;
+                case 2:
+                    letter = "C: ";
+                    break;
+                case 3:
+                    letter = "D: ";
+                    break;
+
+            }
+
+            TextView optionText = optionTexts.get(i);
+            optionText.setText(letter + options.get(i).getAnswerText());
+            optionText.setTextColor(Color.BLACK);
 
 
         }
@@ -105,6 +127,13 @@ public class QuizzFragment extends Fragment {
         optionButtons.add(view.findViewById(R.id.button_optionC));
         optionButtons.add(view.findViewById(R.id.button_optionD));
 
+        optionTexts = new ArrayList<>();
+        optionTexts.add(view.findViewById(R.id.optionA_text));
+        optionTexts.add(view.findViewById(R.id.optionB_text));
+        optionTexts.add(view.findViewById(R.id.optionC_text));
+        optionTexts.add(view.findViewById(R.id.optionD_text));
+
+
         questionTitle = view.findViewById(R.id.question_title);
 
         questionText = view.findViewById(R.id.question_text);
@@ -114,10 +143,10 @@ public class QuizzFragment extends Fragment {
 
         setActions(view);
 
-        countdown = new CountDownTimer(10000, 100) {
+        countdown = new CountDownTimer(30000, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
-                progressBar.setProgress((int)(millisUntilFinished/10000.0*100));
+                progressBar.setProgress((int)(millisUntilFinished/30000.0*100));
             }
 
             @Override
@@ -172,6 +201,8 @@ public class QuizzFragment extends Fragment {
                         ordered.remove(index);
                     } else {
                         optionButtons.get(value).setEnabled(false);
+                        optionTexts.get(value).setTextColor(Color.RED);
+
                         ordered.remove(index);
 
                         removedButtons++;
@@ -190,10 +221,12 @@ public class QuizzFragment extends Fragment {
 
         if(question.isAnswerCorrect(i)){
             Snackbar.make(getView(), "Resposta Correcta!", Snackbar.LENGTH_LONG).show();
-            score += 1;
+            correctAnswers++;
+
+            score += 100 + progressBar.getProgress();
+
         } else{
             Snackbar.make(getView(), "Resposta Incorrecta...", Snackbar.LENGTH_LONG).show();
-            score -= 1;
         }
         showNextQuestion();
     }

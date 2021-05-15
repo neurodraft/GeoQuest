@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
+import android.widget.TextView;
 
 import com.equipa18.geoquest.R;
 import com.equipa18.geoquest.world.InterestPoint;
@@ -28,12 +29,14 @@ public class ConqueredFragment extends Fragment {
 
     private InterestPoint interestPoint;
     private List<InterestPoint> unlockedPoints;
+    private int score;
 
 
 
-    public ConqueredFragment(InterestPoint interestPoint, List<InterestPoint> unlockedPoints) {
+    public ConqueredFragment(InterestPoint interestPoint, int score, List<InterestPoint> unlockedPoints) {
         this.interestPoint = interestPoint;
         this.unlockedPoints = unlockedPoints;
+        this.score = score;
     }
 
     @Override
@@ -89,6 +92,8 @@ public class ConqueredFragment extends Fragment {
                 e.printStackTrace();
             }
         }
+
+        ((TextView)view.findViewById(R.id.points_text)).setText("Ganhou " + score + " pontos!");
 
         setActions(view);
 

@@ -63,13 +63,13 @@ public class InterestPointFragment extends Fragment {
     }
 
 
-    public void wasConquered(List<InterestPoint> unlockedPoints) {
+    public void wasConquered(int score, List<InterestPoint> unlockedPoints) {
         headerIcon.setImageResource(R.drawable.ic_baseline_flag_48);
         headerIcon.setColorFilter(Color.GREEN);
         getParentFragmentManager().popBackStack();
         getParentFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.card_content, new ConqueredFragment(interestPoint, unlockedPoints))
+                .replace(R.id.card_content, new ConqueredFragment(interestPoint,score, unlockedPoints))
                 .addToBackStack(null)
                 .commit();
     }

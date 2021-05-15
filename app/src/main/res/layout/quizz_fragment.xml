@@ -70,7 +70,59 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                android:textSize="14sp" />
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/optionA_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/optionB_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/optionC_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/optionD_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
