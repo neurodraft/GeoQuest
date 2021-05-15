@@ -61,17 +61,26 @@ public class QuizzFragment extends Fragment {
         correctAnswers = 0;
     }
 
+    private void conquered(){
+        System.out.println("Score = " + score);
+        MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
+        mapsFragment.conqueredCurrentPoint(score);
+    }
+
+    private void failed(){
+        PlayerManager.getCurrentPlayer().failedAttempt(interestPoint.id);
+        PlayerManager.savePlayers(getContext());
+        getParentFragmentManager().popBackStack();
+    }
+
     private void showNextQuestion(){
         QuizzQuestion question = quizz.getNextQuestion();
 
         if(question == null){
             if(correctAnswers >= 3){
-                System.out.println("Score = " + score);
-                MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
-                mapsFragment.conqueredCurrentPoint(score);
+                conquered();
             } else {
-                PlayerManager.getCurrentPlayer().failedAttempt(interestPoint.id);
-                getParentFragmentManager().popBackStack();
+                failed();
             }
             return;
         }
@@ -170,7 +179,7 @@ public class QuizzFragment extends Fragment {
     private void setActions(View view){
         Button buttonGiveUp = view.findViewById(R.id.button_giveup);
 
-        buttonGiveUp.setOnClickListener(v -> getParentFragmentManager().popBackStack());
+        buttonGiveUp.setOnClickListener(v -> failed());
 
 
         for(int i = 0; i < optionButtons.size(); i++){

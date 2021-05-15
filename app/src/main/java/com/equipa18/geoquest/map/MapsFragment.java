@@ -456,6 +456,7 @@ public class MapsFragment extends Fragment {
                 }
             }
 
+            PlayerManager.savePlayers(getContext());
             ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered(score, unlockedPoints);
         }
     }

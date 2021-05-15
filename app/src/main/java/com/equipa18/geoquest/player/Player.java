@@ -1,26 +1,22 @@
 package com.equipa18.geoquest.player;
 
+import android.annotation.TargetApi;
 import android.os.Build;
 
-import androidx.annotation.RequiresApi;
-
-import com.equipa18.geoquest.world.InterestPoint;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
+
 import java.util.Map;
 import java.util.Set;
-import java.util.Vector;
 
-public class Player {
+
+public class Player implements Serializable {
     private boolean unitialized;
-
     private Map<Integer, Integer> conqueredPointsScoreMap;
+    private String name;
+    private String email;
+    private String password;
     private Set<Integer> unlockedPoints;
 
     private Map<Integer, Long> failedAttempts;
@@ -28,11 +24,53 @@ public class Player {
     private int score;
 
     public Player() {
+        this("Default", "Default@Default.com", "default");
+    }
+
+    //Constructor for register
+    public Player(String name, String email, String password) {
         this.unitialized = true;
         conqueredPointsScoreMap = new HashMap<>();
         unlockedPoints = new HashSet<>();
         failedAttempts = new HashMap<>();
         score = 0;
+        validatePlayerStrings(name, email, password);
+    }
+
+    private void validatePlayerStrings(String name, String email, String password) {
+        this.name = "Default";
+        this.email = "Default@Default.com";
+        this.password = "default";
+        if(checkString(name)) {
+            this.name = name;
+        }
+        if(checkString(email)) {
+            this.email = email;
+        }
+        if(checkString(password)) {
+            this.password = password;
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+    private boolean checkString(String s) {
+        boolean valid = true;
+        if(s == null || s.isEmpty()) {
+            valid = false;
+        }
+        return valid;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUsername() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void unlockPoint(int interestPointId){
@@ -86,5 +124,9 @@ public class Player {
             return timeSince;
         }
         return 0;
+    }
+
+    public int getScore() {
+        return score;
     }
 }
