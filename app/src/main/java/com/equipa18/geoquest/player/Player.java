@@ -139,11 +139,7 @@ public class Player implements Serializable {
     }
 
     public int getFailedAttempts() {
-        int i = 0;
-        for (Long l:failedAttempts.values()) {
-            i += l;
-        }
-        return i;
+        return failedAttempts.size();
     }
 
     public int getConqueredMonuments() {
