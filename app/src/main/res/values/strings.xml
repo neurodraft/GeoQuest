@@ -48,4 +48,20 @@
     <string name="sync_title">Sync email periodically</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="change_profile_picture">Alterar Foto de Perfil</string>
+    <string name="change_password">Alterar Palavra-passe</string>
+    <string name="statistics">Estatísticas</string>
+    <string name="user_name">Nome de Utilizador</string>
+    <string name="account">Conta</string>
+    <string name="joined">Juntou-se em ...</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="current_password">Palavra-passe Atual</string>
+    <string name="new_password">Nova Palavra-passe</string>
+    <string name="confirm_new_password">Confirmar Nova Palavra-passe</string>
+    <string name="save_changes">Guardar Alterações</string>
+    <string name="monuments_conquered">Monumentos Conquistados</string>
+    <string name="monuments_left">Monumentos por conquistar</string>
+    <string name="failed_attempts">Número de tentativas falhadas</string>
+    <string name="average_quiz_completion_time">Média de tempo utilizado por Quiz</string>
 </resources>
