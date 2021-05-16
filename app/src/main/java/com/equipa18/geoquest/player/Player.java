@@ -133,4 +133,20 @@ public class Player implements Serializable {
     public int getScore() {
         return score;
     }
+
+    public int getRemainingMonuments() {
+        return 22 - unlockedPoints.size();
+    }
+
+    public int getFailedAttempts() {
+        int i = 0;
+        for (Long l:failedAttempts.values()) {
+            i += l;
+        }
+        return i;
+    }
+
+    public int getConqueredMonuments() {
+        return conqueredPointsScoreMap.size();
+    }
 }

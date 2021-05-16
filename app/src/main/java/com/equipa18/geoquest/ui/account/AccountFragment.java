@@ -21,6 +21,7 @@ import com.equipa18.geoquest.ChangePasswordActivity;
 import com.equipa18.geoquest.PicassoManager;
 import com.equipa18.geoquest.R;
 import com.equipa18.geoquest.RegisterActivity;
+import com.equipa18.geoquest.StatisticsActivity;
 import com.equipa18.geoquest.player.PlayerManager;
 
 import org.jetbrains.annotations.NotNull;
@@ -58,6 +59,10 @@ public class AccountFragment extends Fragment {
             goToChange();
         });
 
+        stats.setOnClickListener(v -> {
+            goToStats();
+        });
+
         return view;
     }
 
@@ -71,6 +76,11 @@ public class AccountFragment extends Fragment {
 
     private void goToChange() {
         Intent changeScreen = new Intent(getActivity(), ChangePasswordActivity.class);
+        startActivity(changeScreen);
+    }
+
+    private void goToStats() {
+        Intent changeScreen = new Intent(getActivity(), StatisticsActivity.class);
         startActivity(changeScreen);
     }
 }

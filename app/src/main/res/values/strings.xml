@@ -62,5 +62,5 @@
     <string name="monuments_conquered">Monumentos Conquistados</string>
     <string name="monuments_left">Monumentos por conquistar</string>
     <string name="failed_attempts">Número de tentativas falhadas</string>
-    <string name="average_quiz_completion_time">Média de tempo utilizado por Quiz</string>
+    <string name="score">Pontos</string>
 </resources>
