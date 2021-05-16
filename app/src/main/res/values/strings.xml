@@ -62,6 +62,17 @@
     <string name="monuments_conquered">Monumentos Conquistados</string>
     <string name="monuments_left">Monumentos por conquistar</string>
     <string name="failed_attempts">Número de tentativas falhadas</string>
+    <string name="average_quiz_completion_time">Média de tempo utilizado por Quiz</string>
+    <string name="about">Sobre</string>
+    <string name="dev_team">Projeto realizado por:</string>
+    <string name="bernardo">Bernardo Mota 190221009</string>
+    <string name="pedro">Pedro Guedes 160221031</string>
+    <string name="andre">André Dias 190221068</string>
+    <string name="miguel">Miguel Serrano 190221134</string>
+    <string name="rodrigo">Rodrigo Raimundo 180221009</string>
+    <string name="done_in">Feito no âmbito da disciplina de Computação Móvel 20/21</string>
+    <string name="geo_quest">GeoQuest</string>
+    <string name="icon">Icon</string>
     <string name="score">Pontos</string>
-
+  
 </resources>
