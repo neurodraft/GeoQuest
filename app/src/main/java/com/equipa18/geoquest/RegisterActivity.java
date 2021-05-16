@@ -33,12 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.register_name);
 
         //Listeners for the register buttons
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                register(name.getText().toString(), email.getText().toString(), password.getText().toString());
-            }
-        });
+        register.setOnClickListener(v -> register(name.getText().toString(), email.getText().toString(), password.getText().toString()));
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

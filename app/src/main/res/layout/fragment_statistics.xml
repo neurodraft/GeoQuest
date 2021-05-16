@@ -61,7 +61,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarStatistics" />
 
-    <EditText
+    <TextView
+
         android:id="@+id/monumentsConqueredTextNumber"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -71,7 +72,6 @@
         android:layout_marginEnd="347dp"
         android:layout_marginRight="347dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monumentsConqueredTextView" />
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineBreak1" />
 
-    <EditText
+    <TextView
         android:id="@+id/monumentsLeftTextNumber"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -116,7 +116,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="number"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monumentsLeftTextView" />
 
@@ -148,7 +148,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineBreak2" />
 
-    <EditText
+    <TextView
+
         android:id="@+id/failedAttemptsTextNumber"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -158,7 +159,6 @@
         android:layout_marginEnd="347dp"
         android:layout_marginRight="347dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/failedAttemptsTextView" />
@@ -175,7 +175,8 @@
         app:layout_constraintTop_toBottomOf="@+id/failedAttemptsTextNumber" />
 
     <TextView
-        android:id="@+id/averageQuizCompletionTimeTextView"
+        android:id="@+id/scoreTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -183,14 +184,16 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="107dp"
         android:layout_marginRight="107dp"
-        android:text="@string/average_quiz_completion_time"
+        android:text="@string/score"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineBreak3" />
 
-    <EditText
+    <TextView
+
         android:id="@+id/editTextTime2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -198,8 +201,8 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="time"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/averageQuizCompletionTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

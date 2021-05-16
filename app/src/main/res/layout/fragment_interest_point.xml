@@ -68,7 +68,7 @@
                         android:id="@+id/interest_point_location"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="City, Country" />
+                        android:text="Setúbal, Portugal" />
 
                 </LinearLayout>
 

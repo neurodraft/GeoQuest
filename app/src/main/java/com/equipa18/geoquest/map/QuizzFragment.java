@@ -34,7 +34,6 @@ import java.util.Random;
 
 public class QuizzFragment extends Fragment {
 
-    private QuizzViewModel mViewModel;
 
     private InterestPoint interestPoint;
     private Quizz quizz;
@@ -61,6 +60,16 @@ public class QuizzFragment extends Fragment {
         correctAnswers = 0;
     }
 
+    private void started(){
+        MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
+        mapsFragment.quizzStarted();
+    }
+    private void ended(){
+        MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
+        mapsFragment.quizzEnded();
+    }
+
+
     private void conquered(){
         System.out.println("Score = " + score);
         MapsFragment mapsFragment = (MapsFragment)getParentFragmentManager().getFragments().get(0);
@@ -77,18 +86,26 @@ public class QuizzFragment extends Fragment {
         QuizzQuestion question = quizz.getNextQuestion();
 
         if(question == null){
+
             if(correctAnswers >= 3){
                 conquered();
             } else {
                 failed();
             }
+            ended();
             return;
         }
         questionTitle.setText(question.getQuestionTitle());
 
         questionText.setText(question.getQuestionText());
 
-        buttonHelp.setEnabled(true);
+        if(PlayerManager.getCurrentPlayer().getScore() < 500){
+            buttonHelp.setEnabled(false);
+
+        } else {
+            buttonHelp.setEnabled(true);
+
+        }
 
         List<QuizzAnswer> options = question.getOptions();
         for(int i = 0; i < options.size(); i++){
@@ -164,17 +181,15 @@ public class QuizzFragment extends Fragment {
             }
         };
 
+
         showNextQuestion();
+
+        started();
 
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(QuizzViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
     private void setActions(View view){
         Button buttonGiveUp = view.findViewById(R.id.button_giveup);
@@ -217,6 +232,11 @@ public class QuizzFragment extends Fragment {
                         removedButtons++;
                     }
                 }
+
+                PlayerManager.getCurrentPlayer().spendScore(500);
+                Snackbar.make(getView(), "Gastou 500 pontos.", Snackbar.LENGTH_LONG).show();
+
+
                 buttonHelp.setEnabled(false);
 
             }

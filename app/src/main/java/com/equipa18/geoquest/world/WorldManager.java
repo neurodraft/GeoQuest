@@ -103,4 +103,20 @@ public class WorldManager {
 
         return incorrectAnswers;
     }
+
+    public static InterestPoint findClosest(double latitude, double longitude){
+        InterestPoint closestPoint = null;
+        double closestDistance = -1;
+        for(InterestPoint interestPoint : interestPoints){
+            double distance = Math.sqrt(Math.pow(interestPoint.geoCoordinates.latitude - latitude, 2)+Math.pow(interestPoint.geoCoordinates.longitude - longitude, 2));
+            if(closestPoint == null || distance < closestDistance){
+                closestPoint = interestPoint;
+                closestDistance = distance;
+            }
+        }
+
+        System.out.println(closestPoint);
+
+        return closestPoint;
+    }
 }

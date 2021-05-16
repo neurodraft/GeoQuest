@@ -4,12 +4,15 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +20,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +32,11 @@ import com.equipa18.geoquest.R;
 import com.equipa18.geoquest.player.Player;
 import com.equipa18.geoquest.player.PlayerManager;
 import com.equipa18.geoquest.world.WorldManager;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -41,8 +50,14 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,6 +67,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Vector;
 
 import io.github.jdiemke.triangulation.DelaunayTriangulator;
@@ -91,9 +107,9 @@ public class MapsFragment extends Fragment {
 
             conqueredBitmap = vectorToBitmap(R.drawable.ic_baseline_flag_48, Color.GREEN, 60, 20);
             lockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
-                    Color.GRAY, 0 ,10);
+                    Color.GRAY, 0, 10);
             unlockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
-                    Color.RED, 0 ,10);
+                    Color.RED, 0, 10);
 
 
             prepareMapContent();
@@ -108,6 +124,7 @@ public class MapsFragment extends Fragment {
     private BitmapDescriptor conqueredBitmap;
     private BitmapDescriptor lockedBitmap;
     private BitmapDescriptor unlockedBitmap;
+    private boolean quizzing = false;
 
     private void customizeStyle() {
         try {
@@ -144,23 +161,24 @@ public class MapsFragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+
     }
 
     private BitmapDescriptor vectorToBitmap(@DrawableRes int id, @ColorInt int color, int offsetX, int offsetY) {
         Drawable vectorDrawable = ResourcesCompat.getDrawable(getResources(), id, null);
         assert vectorDrawable != null;
-        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth()+offsetX,
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth() + offsetX,
                 vectorDrawable.getIntrinsicHeight() + offsetY, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0 + offsetX, 0 + offsetY, canvas.getWidth(), canvas.getHeight());
         DrawableCompat.setTint(vectorDrawable, color);
         vectorDrawable.draw(canvas);
 
-        Bitmap resizedBitmap =Bitmap.createBitmap(bitmap, 0,0,bitmap.getWidth(), bitmap.getHeight() - offsetY);
+        Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() - offsetY);
         return BitmapDescriptorFactory.fromBitmap(resizedBitmap);
     }
 
-    private void prepareMapContent(){
+    private void prepareMapContent() {
         markerInterestPointMap = new HashMap<>();
         edgeMap = new HashMap<>();
         edgeList = new ArrayList<>();
@@ -170,7 +188,7 @@ public class MapsFragment extends Fragment {
         double lngSum = 0;
 
         // cycle through all interest points
-        for(InterestPoint interestPoint : interestPoints){
+        for (InterestPoint interestPoint : interestPoints) {
             // create LatLng point from values stored in InterestPoint
             // TODO: Replace GeoCoordinates with LatLng inm InterestPoint
             LatLng point = new LatLng(interestPoint.geoCoordinates.latitude,
@@ -251,12 +269,12 @@ public class MapsFragment extends Fragment {
     }
 
 
-    private void delaunayTriangulation(){
+    private void delaunayTriangulation() {
         try {
             HashMap<Vector2D, InterestPoint> pointMap = new HashMap<>();
             Vector<Vector2D> pointVector = new Vector<>();
 
-            for(InterestPoint interestPoint : interestPoints){
+            for (InterestPoint interestPoint : interestPoints) {
                 Vector2D point = new Vector2D(interestPoint.geoCoordinates.longitude,
                         interestPoint.geoCoordinates.latitude);
 
@@ -269,12 +287,11 @@ public class MapsFragment extends Fragment {
 
             List<Triangle2D> triangleSoup = delaunayTriangulator.getTriangles();
 
-            for(Triangle2D triangle : triangleSoup){
+            for (Triangle2D triangle : triangleSoup) {
 
                 setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.b));
                 setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.c));
                 setUpEdgeBetween(pointMap.get(triangle.b), pointMap.get(triangle.c));
-
 
 
             }
@@ -283,8 +300,7 @@ public class MapsFragment extends Fragment {
     }
 
 
-
-    private void setUpEdgeBetween(InterestPoint a, InterestPoint b){
+    private void setUpEdgeBetween(InterestPoint a, InterestPoint b) {
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(a.geoCoordinates.latitude, a.geoCoordinates.longitude),
                         new LatLng(b.geoCoordinates.latitude, b.geoCoordinates.longitude))
@@ -300,37 +316,94 @@ public class MapsFragment extends Fragment {
         edgeList.add(edge);
     }
 
+    private void initializePlayer(Player player, InterestPoint startPoint){
+        player.unlockPoint(startPoint.id);
 
-    private void setUpPlayer(){
-        Player player = PlayerManager.getCurrentPlayer();
-        if(player.isUnitialized()){
-            InterestPoint startPoint = interestPoints.get(10);
-            player.unlockPoint(startPoint.id);
-
-            for(GameEdge edge : edgeMap.get(startPoint)){
-                InterestPoint other;
-                if(edge.a == startPoint){
-                    other = edge.b;
-                } else {
-                    other = edge.a;
-                }
-                player.unlockPoint(other.id);
-
-                edge.line.setColor(Color.RED);
+        for(GameEdge edge : edgeMap.get(startPoint)){
+            InterestPoint other;
+            if(edge.a == startPoint){
+                other = edge.b;
+            } else {
+                other = edge.a;
             }
+            player.unlockPoint(other.id);
 
-            player.initialized();
+            edge.line.setColor(Color.RED);
+        }
 
-            CameraPosition cameraPosition = new CameraPosition.Builder()
-                    .target(new LatLng(startPoint.geoCoordinates.latitude,
-                            startPoint.geoCoordinates.longitude))
-                    .zoom(16)
-                    .bearing(0)
-                    .tilt(25)
-                    .build();
+        updateMarkers();
 
-            // Moves camera to position
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        player.initialized();
+        PlayerManager.savePlayers(getContext());
+
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(startPoint.geoCoordinates.latitude,
+                        startPoint.geoCoordinates.longitude))
+                .zoom(16)
+                .bearing(0)
+                .tilt(25)
+                .build();
+
+        // Moves camera to position
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        Snackbar.make(getView(), "O seu ponto inícial é " + startPoint.name, Snackbar.LENGTH_LONG).show();
+
+    }
+
+    private void stopCallback(FusedLocationProviderClient client, LocationCallback callback){
+        client.removeLocationUpdates(callback);
+    }
+
+    private void setUpPlayer() {
+        Player player = PlayerManager.getCurrentPlayer();
+        if (player.isUnitialized()) {
+            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                System.out.println("No player location, assuming default");
+                initializePlayer(player, WorldManager.getInterestPoints().get(10));
+            } else {
+                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
+
+                LocationCallback callback = new LocationCallback(){
+                    @Override
+                    public void onLocationResult(LocationResult locationResult) {
+                        super.onLocationResult(locationResult);
+                        Location location =locationResult.getLastLocation();
+
+                        System.out.println(location);
+
+                        if(location == null){
+                            System.out.println("No player location, assuming default");
+                            initializePlayer(player, WorldManager.getInterestPoints().get(10));
+                        } else {
+                            System.out.println("Got player location: lat " + location.getLatitude() + " long " + location.getLongitude());
+                            initializePlayer(player, WorldManager.findClosest(location.getLatitude(), location.getLongitude()));
+                        }
+                        stopCallback(fusedLocationClient, this);
+
+
+                    }
+                };
+
+                fusedLocationClient.requestLocationUpdates(new LocationRequest(), callback, null);
+                /*Task<Location> task = fusedLocationClient.getLastLocation();
+                task.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull @NotNull Exception e) {
+                        System.out.println("No player location, assuming default");
+                        initializePlayer(player, WorldManager.getInterestPoints().get(10));
+                    }
+                });
+                task.addOnSuccessListener(new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        initializePlayer(player, WorldManager.findClosest(location.getLatitude(), location.getLongitude()));
+                        System.out.println("Got player location: lat " + location.getLatitude() + " long " + location.getLongitude());
+                    }
+                });
+
+                 */
+            }
         } else{
             for(GameEdge edge : edgeList){
                 boolean conqueredA = player.hasConquered(edge.a.id);
@@ -346,7 +419,13 @@ public class MapsFragment extends Fragment {
                     }
                 }
             }
+
+            updateMarkers();
         }
+    }
+
+    private void updateMarkers(){
+        Player player = PlayerManager.getCurrentPlayer();
 
         for(Marker marker : markerInterestPointMap.keySet()){
             if(player.hasConquered(markerInterestPointMap.get(marker).id)){
@@ -355,10 +434,6 @@ public class MapsFragment extends Fragment {
                 marker.setIcon(unlockedBitmap);
             }
         }
-
-
-
-
     }
 
     private void setActions(){
@@ -399,12 +474,14 @@ public class MapsFragment extends Fragment {
             public void onMapClick(LatLng latLng) {
                 if(showingCard){
 
-                    /*getParentFragmentManager().beginTransaction()
-                            .setReorderingAllowed(true)
-                            .remove(getParentFragmentManager().findFragmentById(R.id.fragment_container_view))
-                            .commitAllowingStateLoss();
+                    if(quizzing){
+                        quizzing = false;
+                        PlayerManager.getCurrentPlayer().failedAttempt(currentPoint.id);
+                        PlayerManager.savePlayers(getContext());
 
-                     */
+                    }
+
+
                     int backStackEntry = getParentFragmentManager().getBackStackEntryCount();
                     if (backStackEntry > 0) {
                         for (int i = 0; i < backStackEntry; i++) {
@@ -459,6 +536,14 @@ public class MapsFragment extends Fragment {
             PlayerManager.savePlayers(getContext());
             ((InterestPointFragment)getParentFragmentManager().findFragmentById(R.id.fragment_container_view)).wasConquered(score, unlockedPoints);
         }
+    }
+
+    public void quizzStarted() {
+        quizzing = true;
+    }
+
+    public void quizzEnded() {
+        quizzing = false;
     }
 
 
