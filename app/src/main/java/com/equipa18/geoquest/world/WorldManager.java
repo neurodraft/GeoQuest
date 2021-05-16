@@ -1,5 +1,8 @@
 package com.equipa18.geoquest.world;
 
+import android.util.Pair;
+
+import com.equipa18.geoquest.player.Player;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -119,4 +122,6 @@ public class WorldManager {
 
         return closestPoint;
     }
+
+
 }

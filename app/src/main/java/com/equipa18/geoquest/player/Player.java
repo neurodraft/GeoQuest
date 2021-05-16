@@ -92,6 +92,10 @@ public class Player implements Serializable {
         return conqueredPointsScoreMap.containsKey(interestPointId);
     }
 
+    public int getConqueredScore(int interestPointId){
+        return conqueredPointsScoreMap.get(interestPointId);
+    }
+
     public boolean hasUnlocked(int interestPointId){
         return unlockedPoints.contains(interestPointId);
     }
