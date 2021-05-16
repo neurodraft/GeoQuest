@@ -344,6 +344,7 @@ public class MapsFragment extends Fragment {
             }
 
             player.initialized();
+            PlayerManager.savePlayers(getContext());
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(startPoint.geoCoordinates.latitude,
