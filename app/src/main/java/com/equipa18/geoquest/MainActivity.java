@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_GeoQuest_NoActionBar);
         super.onCreate(savedInstanceState);
-        setTheme(R.style.Theme_GeoQuest_PopupOverlay);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         setContentView(R.layout.activity_main);
