@@ -73,6 +73,10 @@ public class Player implements Serializable {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void unlockPoint(int interestPointId){
         unlockedPoints.add(interestPointId);
     }
