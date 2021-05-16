@@ -54,6 +54,18 @@
             android:theme="@style/Theme.GeoQuest.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="@string/authentication"
+            android:theme="@style/Theme.GeoQuest.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="@string/authentication"
+            android:theme="@style/Theme.GeoQuest.NoActionBar">
+        </activity>
+
     </application>
 
 </manifest>

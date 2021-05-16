@@ -12,12 +12,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
         android:contentDescription="@string/profile_picture"
         app:layout_constraintEnd_toStartOf="@+id/userNameText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarAccount"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@mipmap/ic_launcher" />
 
     <Button
@@ -26,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="183dp"
         android:layout_marginRight="183dp"
         android:background="#00FFFFFF"
@@ -38,6 +37,7 @@
         app:backgroundTint="#008BC34A"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePictureImage"
         app:rippleColor="@color/black"
@@ -87,67 +87,18 @@
         app:rippleColor="#3F51B5"
         tools:text="@string/change_password" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionButtonStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/backArrowImageButtonAccount"
-        android:layout_width="52dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/purple_500"
-        android:contentDescription="@string/back_arrow"
-        android:tint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
-
-    <TextView
-        android:id="@+id/accountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="14dp"
-        android:text="@string/account"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/userNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="68dp"
         android:text="@string/user_name"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/joinedInText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/joined"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/lineBreak1"

@@ -73,6 +73,10 @@ public class Player implements Serializable {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void unlockPoint(int interestPointId){
         unlockedPoints.add(interestPointId);
     }
@@ -128,5 +132,17 @@ public class Player implements Serializable {
 
     public int getScore() {
         return score;
+    }
+
+    public int getRemainingMonuments() {
+        return 22 - unlockedPoints.size();
+    }
+
+    public int getFailedAttempts() {
+        return failedAttempts.size();
+    }
+
+    public int getConqueredMonuments() {
+        return conqueredPointsScoreMap.size();
     }
 }
