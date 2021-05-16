@@ -63,4 +63,5 @@
     <string name="monuments_left">Monumentos por conquistar</string>
     <string name="failed_attempts">Número de tentativas falhadas</string>
     <string name="score">Pontos</string>
+
 </resources>

@@ -4,12 +4,15 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +20,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +32,8 @@ import com.equipa18.geoquest.R;
 import com.equipa18.geoquest.player.Player;
 import com.equipa18.geoquest.player.PlayerManager;
 import com.equipa18.geoquest.world.WorldManager;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -41,6 +47,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.Task;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -52,6 +59,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Vector;
 
 import io.github.jdiemke.triangulation.DelaunayTriangulator;
@@ -91,9 +99,9 @@ public class MapsFragment extends Fragment {
 
             conqueredBitmap = vectorToBitmap(R.drawable.ic_baseline_flag_48, Color.GREEN, 60, 20);
             lockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
-                    Color.GRAY, 0 ,10);
+                    Color.GRAY, 0, 10);
             unlockedBitmap = vectorToBitmap(R.drawable.ic_baseline_location_on_48,
-                    Color.RED, 0 ,10);
+                    Color.RED, 0, 10);
 
 
             prepareMapContent();
@@ -144,23 +152,24 @@ public class MapsFragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+
     }
 
     private BitmapDescriptor vectorToBitmap(@DrawableRes int id, @ColorInt int color, int offsetX, int offsetY) {
         Drawable vectorDrawable = ResourcesCompat.getDrawable(getResources(), id, null);
         assert vectorDrawable != null;
-        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth()+offsetX,
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth() + offsetX,
                 vectorDrawable.getIntrinsicHeight() + offsetY, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0 + offsetX, 0 + offsetY, canvas.getWidth(), canvas.getHeight());
         DrawableCompat.setTint(vectorDrawable, color);
         vectorDrawable.draw(canvas);
 
-        Bitmap resizedBitmap =Bitmap.createBitmap(bitmap, 0,0,bitmap.getWidth(), bitmap.getHeight() - offsetY);
+        Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() - offsetY);
         return BitmapDescriptorFactory.fromBitmap(resizedBitmap);
     }
 
-    private void prepareMapContent(){
+    private void prepareMapContent() {
         markerInterestPointMap = new HashMap<>();
         edgeMap = new HashMap<>();
         edgeList = new ArrayList<>();
@@ -170,7 +179,7 @@ public class MapsFragment extends Fragment {
         double lngSum = 0;
 
         // cycle through all interest points
-        for(InterestPoint interestPoint : interestPoints){
+        for (InterestPoint interestPoint : interestPoints) {
             // create LatLng point from values stored in InterestPoint
             // TODO: Replace GeoCoordinates with LatLng inm InterestPoint
             LatLng point = new LatLng(interestPoint.geoCoordinates.latitude,
@@ -251,12 +260,12 @@ public class MapsFragment extends Fragment {
     }
 
 
-    private void delaunayTriangulation(){
+    private void delaunayTriangulation() {
         try {
             HashMap<Vector2D, InterestPoint> pointMap = new HashMap<>();
             Vector<Vector2D> pointVector = new Vector<>();
 
-            for(InterestPoint interestPoint : interestPoints){
+            for (InterestPoint interestPoint : interestPoints) {
                 Vector2D point = new Vector2D(interestPoint.geoCoordinates.longitude,
                         interestPoint.geoCoordinates.latitude);
 
@@ -269,12 +278,11 @@ public class MapsFragment extends Fragment {
 
             List<Triangle2D> triangleSoup = delaunayTriangulator.getTriangles();
 
-            for(Triangle2D triangle : triangleSoup){
+            for (Triangle2D triangle : triangleSoup) {
 
                 setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.b));
                 setUpEdgeBetween(pointMap.get(triangle.a), pointMap.get(triangle.c));
                 setUpEdgeBetween(pointMap.get(triangle.b), pointMap.get(triangle.c));
-
 
 
             }
@@ -283,8 +291,7 @@ public class MapsFragment extends Fragment {
     }
 
 
-
-    private void setUpEdgeBetween(InterestPoint a, InterestPoint b){
+    private void setUpEdgeBetween(InterestPoint a, InterestPoint b) {
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(a.geoCoordinates.latitude, a.geoCoordinates.longitude),
                         new LatLng(b.geoCoordinates.latitude, b.geoCoordinates.longitude))
@@ -301,10 +308,27 @@ public class MapsFragment extends Fragment {
     }
 
 
-    private void setUpPlayer(){
+    private void setUpPlayer() {
         Player player = PlayerManager.getCurrentPlayer();
-        if(player.isUnitialized()){
-            InterestPoint startPoint = interestPoints.get(10);
+        if (player.isUnitialized()) {
+
+            InterestPoint startPoint;
+
+            System.out.println(ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION));
+            System.out.println(ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION));
+
+
+            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                System.out.println("No player location, assuming default");
+                startPoint = WorldManager.getInterestPoints().get(10);
+            } else {
+                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
+                Location location = fusedLocationClient.getLastLocation().getResult();
+                System.out.println("Got player location: lat " + location.getLatitude() + " long " + location.getLongitude());
+                startPoint = WorldManager.findClosest(location.getLatitude(), location.getLongitude());
+            }
+
+
             player.unlockPoint(startPoint.id);
 
             for(GameEdge edge : edgeMap.get(startPoint)){
@@ -320,6 +344,7 @@ public class MapsFragment extends Fragment {
             }
 
             player.initialized();
+            PlayerManager.savePlayers(getContext());
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(startPoint.geoCoordinates.latitude,

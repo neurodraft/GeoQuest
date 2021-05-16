@@ -62,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarStatistics" />
 
     <TextView
+
         android:id="@+id/monumentsConqueredTextNumber"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -115,6 +116,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monumentsLeftTextView" />
 
@@ -147,6 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lineBreak2" />
 
     <TextView
+
         android:id="@+id/failedAttemptsTextNumber"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -173,6 +176,7 @@
 
     <TextView
         android:id="@+id/scoreTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -189,6 +193,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lineBreak3" />
 
     <TextView
+
         android:id="@+id/editTextTime2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -198,5 +203,6 @@
         android:ems="10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
