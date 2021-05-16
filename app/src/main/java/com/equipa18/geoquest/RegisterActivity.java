@@ -21,7 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_GeoQuest_NoActionBar);
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_GeoQuest_PopupOverlay);
         setContentView(R.layout.fragment_register);
 
         goToLogin = findViewById(R.id.button_gotologin);
