@@ -1,9 +1,14 @@
 package com.equipa18.geoquest.player;
 
 import android.content.Context;
+import android.os.Build;
+import android.util.Pair;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
+import com.equipa18.geoquest.world.InterestPoint;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,8 +21,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PlayerManager {
@@ -122,5 +130,32 @@ public class PlayerManager {
             }
         }
         return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static String getRanking(int interestPointId) {
+        List<Pair<Player, Integer>> allScores = new ArrayList<>();
+
+        for(Player player : players.values()){
+            if(player.hasConquered(interestPointId)){
+                Pair<Player, Integer> pair = new Pair<>(player, player.getConqueredScore(interestPointId));
+                allScores.add(pair);
+            }
+        }
+
+        allScores.sort(new Comparator<Pair<Player, Integer>>() {
+            @Override
+            public int compare(Pair<Player, Integer> o1, Pair<Player, Integer> o2) {
+                return o2.second - o1.second ;
+            }
+        });
+
+        String s = "";
+
+        for(int i = 0; i < allScores.size(); i++){
+            s += (i+1) + ":\t" + allScores.get(i).first.getUsername() + " (" + allScores.get(i).second + " pts.) \n";
+        }
+
+        return s;
     }
 }
