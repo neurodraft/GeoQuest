@@ -1,18 +1,14 @@
 package com.equipa18.geoquest;
 
-import android.content.ContextWrapper;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.equipa18.geoquest.player.Player;
 import com.equipa18.geoquest.player.PlayerManager;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class StatisticsActivity extends AppCompatActivity {
     private ImageButton back;
@@ -38,7 +34,7 @@ public class StatisticsActivity extends AppCompatActivity {
         score.setText(String.valueOf(p.getScore()));
         monumentsConq.setText(String.valueOf(p.getConqueredMonuments()));
         remainingMonuments.setText(String.valueOf(p.getRemainingMonuments()));
-        failedAttempts.setText(String.valueOf(p.getFailedAttempts()));
+        failedAttempts.setText(String.valueOf(p.getLastFailedAttemp()));
     }
 
 }

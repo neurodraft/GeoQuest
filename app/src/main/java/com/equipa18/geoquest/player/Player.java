@@ -19,7 +19,8 @@ public class Player implements Serializable {
     private String password;
     private Set<Integer> unlockedPoints;
 
-    private Map<Integer, Long> failedAttempts;
+    private Map<Integer, Long> lastFailedAttemp;
+    private int failedAttempts;
 
     private int score;
 
@@ -32,7 +33,8 @@ public class Player implements Serializable {
         this.unitialized = true;
         conqueredPointsScoreMap = new HashMap<>();
         unlockedPoints = new HashSet<>();
-        failedAttempts = new HashMap<>();
+        lastFailedAttemp = new HashMap<>();
+        failedAttempts = 0;
         score = 0;
         validatePlayerStrings(name, email, password);
     }
@@ -103,14 +105,15 @@ public class Player implements Serializable {
     }
 
     public void failedAttempt(int interestPointId){
-        failedAttempts.put(interestPointId, System.currentTimeMillis());
+        lastFailedAttemp.put(interestPointId, System.currentTimeMillis());
+        failedAttempts++;
     }
 
     public boolean hasCooldown(int interestPointId){
-        if(failedAttempts.containsKey(interestPointId)){
-            long timeSince = System.currentTimeMillis() -  failedAttempts.get(interestPointId);
+        if(lastFailedAttemp.containsKey(interestPointId)){
+            long timeSince = System.currentTimeMillis() -  lastFailedAttemp.get(interestPointId);
             if(timeSince >= 60000){
-                failedAttempts.remove(interestPointId);
+                lastFailedAttemp.remove(interestPointId);
                 return false;
             }
             return true;
@@ -119,10 +122,10 @@ public class Player implements Serializable {
     }
 
     public long getCooldown(int interestPointId){
-        if(failedAttempts.containsKey(interestPointId)){
-            long timeSince = System.currentTimeMillis() -  failedAttempts.get(interestPointId);
+        if(lastFailedAttemp.containsKey(interestPointId)){
+            long timeSince = System.currentTimeMillis() -  lastFailedAttemp.get(interestPointId);
             if(timeSince >= 60000){
-                failedAttempts.remove(interestPointId);
+                lastFailedAttemp.remove(interestPointId);
                 return 0;
             }
             return timeSince;
@@ -135,14 +138,18 @@ public class Player implements Serializable {
     }
 
     public int getRemainingMonuments() {
-        return 22 - unlockedPoints.size();
+        return 22 - getConqueredMonuments();
     }
 
-    public int getFailedAttempts() {
-        return failedAttempts.size();
+    public int getLastFailedAttemp() {
+        return failedAttempts;
     }
 
     public int getConqueredMonuments() {
         return conqueredPointsScoreMap.size();
+    }
+
+    public void spendScore(int amount) {
+        score = score - amount;
     }
 }
