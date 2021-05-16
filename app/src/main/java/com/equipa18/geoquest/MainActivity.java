@@ -29,14 +29,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
     private ImageView picture;
     private TextView username;
     private TextView email;
-    private File sd;
-    private File imagefile;
-    private String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,23 +100,13 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(cam, 0);
         });
 
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(data != null) {
-            Bitmap bmap = (Bitmap) data.getExtras().get("data");
-            try {
-                FileOutputStream out = new FileOutputStream(imagefile);
-                bmap.compress(Bitmap.CompressFormat.PNG, 90, out);
-                out.flush();
-                out.close();
-                PicassoManager.applyRoundPicture(picture);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        if(PicassoManager.savePic(data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+            PicassoManager.applyRoundPicture(picture);
         }
     }
 
